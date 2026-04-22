@@ -17,6 +17,28 @@ function clean($val) {
     return htmlspecialchars(strip_tags(trim($val ?? '')));
 }
 
+function getDevice($ua) {
+    $ua = strtolower($ua);
+    if (strpos($ua, 'iphone') !== false) return 'iPhone';
+    if (strpos($ua, 'ipad') !== false) return 'iPad';
+    if (strpos($ua, 'android') !== false) return 'Android';
+    if (strpos($ua, 'windows') !== false) return 'Windows PC';
+    if (strpos($ua, 'macintosh') !== false) return 'Mac';
+    if (strpos($ua, 'linux') !== false) return 'Linux';
+    return 'Other';
+}
+
+function getGeo($ip) {
+    $res = @file_get_contents("http://ip-api.com/json/{$ip}");
+    if ($res) {
+        $data = json_decode($res, true);
+        if ($data && $data['status'] === 'success') {
+            return ['country' => $data['country'], 'city' => $data['city']];
+        }
+    }
+    return ['country' => 'Unknown', 'city' => 'Unknown'];
+}
+
 date_default_timezone_set('Asia/Kolkata');
 
 $name    = clean($_POST['name'] ?? '');
@@ -39,6 +61,10 @@ if (!empty($errors)) {
 
 $ip        = $_SERVER['REMOTE_ADDR'] ?? '';
 $userAgent = substr($_SERVER['HTTP_USER_AGENT'] ?? '', 0, 500);
+$device    = getDevice($userAgent);
+$geo       = getGeo($ip);
+$country   = $geo['country'];
+$city      = $geo['city'];
 
 // ===== SAVE TO DATABASE =====
 $saved = false;
@@ -49,12 +75,13 @@ try {
         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]
     );
     $stmt = $pdo->prepare(
-        "INSERT INTO leads (name, phone, email, project, message, ip_address, user_agent, created_at)
-         VALUES (:name, :phone, :email, :project, :message, :ip, :ua, :created_at)"
+        "INSERT INTO leads (name, phone, email, project, message, ip_address, user_agent, device, country, city, created_at)
+         VALUES (:name, :phone, :email, :project, :message, :ip, :ua, :device, :country, :city, :created_at)"
     );
     $stmt->execute([
         ':name' => $name, ':phone' => $phone, ':email' => $email,
         ':project' => $project, ':message' => $message, ':ip' => $ip, ':ua' => $userAgent,
+        ':device' => $device, ':country' => $country, ':city' => $city,
         ':created_at' => date('Y-m-d H:i:s')
     ]);
     $saved = true;

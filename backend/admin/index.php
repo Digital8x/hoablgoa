@@ -136,18 +136,19 @@ try {
           <th>Date &amp; Time</th>
           <th>Name</th>
           <th>Phone</th>
-          <th>Email</th>
           <th>Project Interest</th>
+          <th>Location</th>
+          <th>Device</th>
           <th>Message</th>
           <th>Action</th>
         </tr>
       </thead>
       <tbody>
         <?php if (isset($_GET['msg']) && $_GET['msg'] === 'deleted'): ?>
-          <tr><td colspan="8" style="background:rgba(229,62,62,0.1); color:#fc8181; text-align:center; padding:0.5rem;">Lead deleted successfully.</td></tr>
+          <tr><td colspan="10" style="background:rgba(229,62,62,0.1); color:#fc8181; text-align:center; padding:0.5rem;">Lead deleted successfully.</td></tr>
         <?php endif; ?>
         <?php if (empty($leads)): ?>
-          <tr><td colspan="8" class="empty">No leads yet. Share your website to start collecting enquiries!</td></tr>
+          <tr><td colspan="10" class="empty">No leads yet. Share your website to start collecting enquiries!</td></tr>
         <?php else: ?>
           <?php foreach ($leads as $i => $lead): ?>
           <tr>
@@ -155,9 +156,13 @@ try {
             <td><?= htmlspecialchars(date('d M Y', strtotime($lead['created_at'] ?? ''))) ?><br /><small style="color:#4a5568"><?= htmlspecialchars(date('h:i A', strtotime($lead['created_at'] ?? ''))) ?></small></td>
             <td><?= htmlspecialchars($lead['name'] ?? '') ?></td>
             <td class="phone"><a href="tel:<?= htmlspecialchars($lead['phone'] ?? '') ?>"><?= htmlspecialchars($lead['phone'] ?? '') ?></a></td>
-            <td><?= htmlspecialchars($lead['email'] ?? '') ?></td>
             <td class="project" title="<?= htmlspecialchars($lead['project'] ?? '') ?>"><?= htmlspecialchars($lead['project'] ?? '') ?></td>
-            <td class="msg" title="<?= htmlspecialchars($lead['message'] ?? '') ?>"><?= htmlspecialchars(substr($lead['message'] ?? '', 0, 60)) . (strlen($lead['message'] ?? '') > 60 ? '…' : '') ?></td>
+            <td>
+                <small style="color:#c9a84c; font-weight:600;"><?= htmlspecialchars($lead['city'] ?? 'Unknown') ?></small><br/>
+                <small style="color:#8898b5;"><?= htmlspecialchars($lead['country'] ?? 'Unknown') ?></small>
+            </td>
+            <td><small><?= htmlspecialchars($lead['device'] ?? 'Unknown') ?></small></td>
+            <td class="msg" title="<?= htmlspecialchars($lead['message'] ?? '') ?>"><?= htmlspecialchars(substr($lead['message'] ?? '', 0, 40)) . (strlen($lead['message'] ?? '') > 40 ? '…' : '') ?></td>
             <td>
                 <?php if (isset($lead['id'])): ?>
                 <a href="?delete=<?= $lead['id'] ?>" onclick="return confirm('Are you sure you want to delete this lead?')" style="color:#fc8181; text-decoration:none; font-size:0.75rem; border:1px solid rgba(229,62,62,0.3); padding:2px 8px; border-radius:4px;">Delete</a>
