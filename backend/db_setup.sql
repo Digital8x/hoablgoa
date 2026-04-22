@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS leads (
     phone        VARCHAR(30)   NOT NULL,
     email        VARCHAR(150)  DEFAULT '',
     project      VARCHAR(200)  NOT NULL,
-    message      TEXT          DEFAULT '',
+    message      TEXT,
     ip_address   VARCHAR(50)   DEFAULT '',
     user_agent   VARCHAR(500)  DEFAULT '',
     source       VARCHAR(200)  DEFAULT 'Website',
