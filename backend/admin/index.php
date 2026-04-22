@@ -1,25 +1,17 @@
 <?php
+session_start();
 require_once __DIR__ . '/../config.php';
 
-// ===== HTTP BASIC AUTH (Fix for CGI/FastCGI) =====
-if (!isset($_SERVER['PHP_AUTH_USER'])) {
-    if (isset($_SERVER['HTTP_AUTHORIZATION']) && stripos($_SERVER['HTTP_AUTHORIZATION'], 'basic') === 0) {
-        list($user, $pass) = explode(':', base64_decode(substr($_SERVER['HTTP_AUTHORIZATION'], 6)));
-        $_SERVER['PHP_AUTH_USER'] = $user;
-        $_SERVER['PHP_AUTH_PW'] = $pass;
-    } elseif (isset($_SERVER['REDIRECT_HTTP_AUTHORIZATION']) && stripos($_SERVER['REDIRECT_HTTP_AUTHORIZATION'], 'basic') === 0) {
-        list($user, $pass) = explode(':', base64_decode(substr($_SERVER['REDIRECT_HTTP_AUTHORIZATION'], 6)));
-        $_SERVER['PHP_AUTH_USER'] = $user;
-        $_SERVER['PHP_AUTH_PW'] = $pass;
-    }
+// Check session
+if (!isset($_SESSION['hoabl_logged_in']) || $_SESSION['hoabl_logged_in'] !== true) {
+    header('Location: login.php');
+    exit;
 }
 
-if (!isset($_SERVER['PHP_AUTH_USER']) ||
-    $_SERVER['PHP_AUTH_USER'] !== ADMIN_USER ||
-    $_SERVER['PHP_AUTH_PW']   !== ADMIN_PASS) {
-    header('WWW-Authenticate: Basic realm="HOABL Admin"');
-    header('HTTP/1.0 401 Unauthorized');
-    echo '<h3>Access Denied.</h3>';
+// Logout logic
+if (isset($_GET['logout'])) {
+    session_destroy();
+    header('Location: login.php');
     exit;
 }
 
@@ -100,8 +92,9 @@ try {
 <body>
 <div class="header">
   <h1>🏝️ HOABL Leads Admin</h1>
-  <div>
+  <div style="display:flex; align-items:center; gap:1.5rem;">
     <span class="header-meta">Logged in as: <?= htmlspecialchars(ADMIN_USER) ?> &nbsp;|&nbsp; <?= date('d M Y, h:i A') ?></span>
+    <a href="index.php?logout=1" style="background:rgba(229,62,62,0.1); color:#fc8181; padding:0.4rem 1rem; border-radius:50px; text-decoration:none; font-size:0.75rem; font-weight:600; border:1px solid rgba(229,62,62,0.2); transition:0.2s;" onmouseover="this.style.background='rgba(229,62,62,0.2)'" onmouseout="this.style.background='rgba(229,62,62,0.1)'">Logout</a>
   </div>
 </div>
 
