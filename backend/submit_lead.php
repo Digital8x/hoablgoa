@@ -50,11 +50,12 @@ try {
     );
     $stmt = $pdo->prepare(
         "INSERT INTO leads (name, phone, email, project, message, ip_address, user_agent, created_at)
-         VALUES (:name, :phone, :email, :project, :message, :ip, :ua, NOW())"
+         VALUES (:name, :phone, :email, :project, :message, :ip, :ua, :created_at)"
     );
     $stmt->execute([
         ':name' => $name, ':phone' => $phone, ':email' => $email,
-        ':project' => $project, ':message' => $message, ':ip' => $ip, ':ua' => $userAgent
+        ':project' => $project, ':message' => $message, ':ip' => $ip, ':ua' => $userAgent,
+        ':created_at' => date('Y-m-d H:i:s')
     ]);
     $saved = true;
 } catch (Exception $e) {
