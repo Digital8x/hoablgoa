@@ -550,6 +550,12 @@
     });
     window.closeLightbox = () => { document.getElementById('lightbox').style.display = 'none'; };
 
+    // Mobile Drawer Logic
+    function toggleDrawer() {
+      document.getElementById('mobileDrawer').classList.toggle('open');
+    }
+    window.toggleDrawer = toggleDrawer;
+
     // Scroll Logic ... (rest)
   </script>
 </body>
