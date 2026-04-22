@@ -19,10 +19,20 @@ function clean($val) {
 
 function getDevice($ua) {
     $ua = strtolower($ua);
-    if (strpos($ua, 'iphone') !== false) return 'iPhone';
-    if (strpos($ua, 'android') !== false) return 'Android';
+    // Tablets
+    if (strpos($ua, 'ipad') !== false) return 'iPad (Apple iPad)';
+    if (strpos($ua, 'android') !== false && strpos($ua, 'mobile') === false) return 'Android Tablet';
+    
+    // Mobile Phones
+    if (strpos($ua, 'iphone') !== false) return 'iPhone (Apple iPhone)';
+    if (strpos($ua, 'android') !== false) return 'Android Phone';
+    
+    // Desktop
     if (strpos($ua, 'windows') !== false) return 'Windows PC';
-    return 'Other';
+    if (strpos($ua, 'macintosh') !== false || strpos($ua, 'mac os x') !== false) return 'Mac (Apple MacBook / iMac)';
+    if (strpos($ua, 'linux') !== false) return 'Linux PC';
+    
+    return 'Other Device';
 }
 
 function getGeo($ip) {
