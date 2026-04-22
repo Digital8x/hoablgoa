@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HOABL Goa | Premium Plots & Villas | Authorized Channel Partner | Digital8X</title>
+  <meta name="description" content="Explore premium plots and villas in Goa by The House of Abhinandan Lodha. Gulf of Goa (Vasco) from ₹2.88 Cr & One Goa (Bicholim) from ₹1.04 Cr. Authorized Channel Partner." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ============================================================
+       PREMIUM HUB CSS — 3D GLASSMORPHIC LIVE THEME
+    ============================================================ */
+
+    /* Animated gradient mesh background */
+    body { background: #030812; }
+
+    .bg-canvas {
+      position: fixed; inset: 0; z-index: -10; overflow: hidden;
+      background: #030812;
+    }
+    .bg-video {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.85; pointer-events: none; z-index: 0;
+    }
+    .video-overlay {
+      position: absolute; inset: 0; background: rgba(3,8,18,0.4); pointer-events: none; z-index: 1;
+    }
+    .hero-section > *:not(.bg-video):not(.video-overlay) {
+      position: relative; z-index: 2;
+    }
+    .bg-orb {
+      position: absolute; border-radius: 50%;
+      animation: orbFloat 18s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+    .bg-orb-1 {
+      width: 900px; height: 900px;
+      background: radial-gradient(circle, rgba(26,111,255,0.15), transparent 70%);
+      top: -20%; left: -15%; animation-delay: 0s;
+    }
+    .bg-orb-2 {
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(201,168,76,0.12), transparent 70%);
+      top: 20%; right: -10%; animation-delay: -6s;
+    }
+    .bg-orb-3 {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(0,212,177,0.10), transparent 70%);
+      bottom: -10%; left: 30%; animation-delay: -12s;
+    }
+    @keyframes orbFloat {
+      0%   { transform: translate(0,0) scale(1); }
+      50%  { transform: translate(60px,-40px) scale(1.08); }
+      100% { transform: translate(-30px,60px) scale(0.96); }
+    }
+
+
+
+    /* ---- NAVBAR ---- */
+    .site-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 1.2rem 0;
+      transition: all 0.4s ease;
+    }
+    .site-nav.scrolled {
+      background: rgba(3,8,18,0.92);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      padding: 0.7rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+    }
+    .nav-inner {
+      max-width: 1260px; margin: 0 auto; padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo img { height: 60px; object-fit: contain; filter: brightness(1.05); }
+    .nav-menu { display: flex; align-items: center; gap: 2.4rem; list-style: none; }
+    .nav-menu a {
+      font-size: 0.88rem; font-weight: 500; color: rgba(232,234,240,0.75);
+      text-decoration: none; transition: color 0.25s;
+      letter-spacing: 0.04em;
+    }
+    .nav-menu a:hover { color: #c9a84c; }
+    .nav-cta-btn {
+      background: linear-gradient(135deg, #c9a84c, #e8943a);
+      color: #030812 !important; font-weight: 700 !important;
+      padding: 0.65rem 1.8rem; border-radius: 50px;
+      box-shadow: 0 6px 24px rgba(201,168,76,0.35);
+      transition: all 0.3s !important;
+    }
+    .nav-cta-btn:hover { transform: translateY(-2px) !important; box-shadow: 0 12px 32px rgba(201,168,76,0.55) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
+    .hamburger span { display: block; width: 26px; height: 2px; background: #e8eaf0; border-radius: 2px; transition: 0.3s; }
+
+    /* ---- HERO ---- */
+    .hero-section {
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 9rem 2rem 5rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3);
+      color: #c9a84c; padding: 0.45rem 1.4rem; border-radius: 50px;
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      font-weight: 800; line-height: 1.1;
+      margin-bottom: 1.4rem;
+      max-width: 900px;
+    }
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: #8898b5; max-width: 640px; margin: 0 auto 3rem;
+      line-height: 1.75;
+    }
+    .hero-cta-row {
+      display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center;
+      margin-bottom: 4rem;
+    }
+    .btn-hero-primary {
+      background: linear-gradient(135deg, #c9a84c, #e8943a);
+      color: #030812; font-weight: 800; font-size: 1rem;
+      padding: 1.05rem 2.8rem; border-radius: 50px; border: none; cursor: pointer;
+      box-shadow: 0 10px 40px rgba(201,168,76,0.45);
+      transition: all 0.35s;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-hero-primary:hover { transform: translateY(-4px); box-shadow: 0 18px 50px rgba(201,168,76,0.65); }
+    .btn-hero-glass {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #e8eaf0; font-weight: 600; font-size: 1rem;
+      padding: 1.05rem 2.8rem; border-radius: 50px; cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: all 0.35s;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-hero-glass:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); border-color: rgba(201,168,76,0.3); }
+
+    /* Hero Stats */
+    .hero-stats-row {
+      display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; justify-content: center;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat-num { display: block; font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 800; color: #c9a84c; }
+    .hero-stat-label { font-size: 0.78rem; color: #6b7a99; text-transform: uppercase; letter-spacing: 0.1em; }
+    .hero-stat-div { width: 1px; height: 48px; background: rgba(255,255,255,0.1); }
+
+    /* ---- PROJECT CARDS ---- */
+    .projects-hub {
+      padding: 6rem 2rem;
+      max-width: 1260px; margin: 0 auto;
+    }
+    .hub-label { text-align: center; margin-bottom: 5rem; }
+    .hub-label h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800;
+      margin-top: 0.8rem; margin-bottom: 1rem;
+    }
+    .hub-label p { color: #8898b5; max-width: 560px; margin: 0 auto; font-size: 1.05rem; line-height: 1.7; }
+
+    .cards-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2.5rem; align-items: start;
+    }
+    .proj-card {
+      border-radius: 32px; overflow: hidden; position: relative;
+      border: 1px solid rgba(255,255,255,0.07);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+      transition: all 0.5s cubic-bezier(0.16,1,0.3,1);
+      cursor: pointer;
+    }
+    .proj-card:hover { transform: translateY(-14px) scale(1.015); box-shadow: 0 50px 120px rgba(0,0,0,0.75); border-color: rgba(201,168,76,0.25); }
+
+    /* Hero image of the card */
+    .proj-card-img {
+      width: 100%; height: 340px; object-fit: cover;
+      transition: transform 0.8s ease;
+      display: block;
+    }
+    .proj-card:hover .proj-card-img { transform: scale(1.06); }
+
+    /* Glass overlay at bottom */
+    .proj-card-body {
+      background: rgba(3,8,18,0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 2.2rem 2.2rem 2.4rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .proj-card-tag {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: #c9a84c;
+      background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.25);
+      padding: 0.3rem 0.9rem; border-radius: 50px; margin-bottom: 1rem;
+    }
+    .proj-card-tag.teal { color: #00d4b1; background: rgba(0,212,177,0.1); border-color: rgba(0,212,177,0.25); }
+    .proj-card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem; font-weight: 800; margin-bottom: 0.4rem;
+      line-height: 1.15;
+    }
+    .proj-card-loc { font-size: 0.88rem; color: #6b7a99; margin-bottom: 1.2rem; }
+    .proj-card-desc { font-size: 0.92rem; color: #8898b5; line-height: 1.7; margin-bottom: 1.8rem; }
+
+    /* Pricing mini-strips */
+    .proj-pricing-strip {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1rem; margin-bottom: 2rem;
+    }
+    .price-pill {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px; padding: 1.1rem 1.2rem;
+      transition: border-color 0.3s;
+    }
+    .price-pill:hover { border-color: rgba(201,168,76,0.3); }
+    .pp-type { font-size: 0.72rem; color: #6b7a99; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.35rem; }
+    .pp-size { font-size: 0.82rem; color: #a0aec0; margin-bottom: 0.35rem; }
+    .pp-price { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 800; color: #c9a84c; margin-bottom: 0.2rem; }
+    .pp-pos { font-size: 0.7rem; color: #536080; }
+
+    .proj-usps { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem; }
+    .proj-usps li { display: flex; align-items: center; gap: 0.7rem; font-size: 0.88rem; color: #a0aec0; }
+    .proj-usps li::before { content: '✦'; color: #c9a84c; font-size: 0.6rem; flex-shrink: 0; }
+
+    .proj-card-btns { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+    .btn-explore {
+      flex: 1; background: linear-gradient(135deg, #c9a84c, #e8943a);
+      color: #030812; font-weight: 800; font-size: 0.9rem;
+      padding: 0.9rem 1.8rem; border-radius: 50px; border: none;
+      cursor: pointer; transition: all 0.35s;
+      box-shadow: 0 8px 28px rgba(201,168,76,0.4); text-align: center;
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+    }
+    .btn-explore:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(201,168,76,0.6); }
+    .btn-enquire {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #e8eaf0; font-weight: 600; font-size: 0.9rem;
+      padding: 0.9rem 1.6rem; border-radius: 50px; cursor: pointer;
+      transition: all 0.35s;
+    }
+    .btn-enquire:hover { background: rgba(255,255,255,0.1); border-color: rgba(201,168,76,0.3); }
+
+    /* ---- WHY SECTION ---- */
+    .why-section {
+      padding: 7rem 2rem;
+      max-width: 1260px; margin: 0 auto;
+    }
+    .why-grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.8rem; }
+    .why-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      backdrop-filter: blur(16px);
+      border-radius: 24px; padding: 2.4rem 2rem;
+      text-align: center; transition: all 0.4s;
+    }
+    .why-item:hover { transform: translateY(-10px); border-color: rgba(201,168,76,0.2); box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
+    .why-icon { font-size: 2.6rem; margin-bottom: 1.2rem; }
+    .why-item h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.7rem; }
+    .why-item p { color: #6b7a99; font-size: 0.9rem; line-height: 1.65; }
+
+    /* ---- FOOTER ---- */
+    .site-footer {
+      background: #020610; border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 4rem 2rem 2rem;
+    }
+    .footer-grid { max-width: 1260px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-logo img { height: 60px; object-fit: contain; margin-bottom: 1rem; }
+    .footer-about { color: #536080; font-size: 0.88rem; line-height: 1.7; margin-bottom: 1.2rem; }
+    .footer-phone { color: #c9a84c; font-weight: 700; font-size: 1rem; }
+    .footer-col h4 { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #c9a84c; margin-bottom: 1.2rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .footer-col a { color: #536080; font-size: 0.88rem; text-decoration: none; transition: color 0.25s; }
+    .footer-col a:hover { color: #c9a84c; }
+    .footer-bottom-bar { max-width: 1260px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.8rem; }
+    .footer-disclaimer { font-size: 0.8rem; color: #3a4560; line-height: 1.65; margin-bottom: 0.8rem; }
+    .footer-disclaimer strong { color: #536080; }
+    .footer-legal-links { display: flex; gap: 1.5rem; }
+    .footer-legal-links a { font-size: 0.78rem; color: #3a4560; text-decoration: none; transition: color 0.25s; }
+    .footer-legal-links a:hover { color: #c9a84c; }
+
+    /* ---- MODAL ---- */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 2000;
+      display: flex; align-items: center; justify-content: center;
+      padding: 1.5rem;
+      background: rgba(0,0,0,0);
+      backdrop-filter: blur(0px);
+      pointer-events: none;
+      transition: background 0.4s, backdrop-filter 0.4s;
+    }
+    .modal-overlay.open {
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(12px);
+      pointer-events: auto;
+    }
+    .modal-box {
+      background: rgba(8,16,34,0.92);
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border-radius: 28px; width: 100%; max-width: 520px;
+      padding: 2.8rem; position: relative;
+      transform: translateY(40px) scale(0.95);
+      opacity: 0;
+      transition: all 0.45s cubic-bezier(0.16,1,0.3,1);
+      box-shadow: 0 50px 120px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.05);
+    }
+    .modal-overlay.open .modal-box { transform: translateY(0) scale(1); opacity: 1; }
+    .modal-close {
+      position: absolute; top: 1.2rem; right: 1.4rem;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      color: #e8eaf0; width: 36px; height: 36px; border-radius: 50%;
+      cursor: pointer; font-size: 1.1rem; display: flex; align-items: center; justify-content: center;
+      transition: background 0.25s;
+    }
+    .modal-close:hover { background: rgba(255,255,255,0.12); }
+    .modal-title { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .modal-sub { color: #6b7a99; font-size: 0.9rem; margin-bottom: 2rem; }
+    .form-label { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #8898b5; margin-bottom: 0.5rem; }
+    .form-input {
+      width: 100%; background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1); border-radius: 14px;
+      padding: 0.9rem 1.2rem; color: #e8eaf0;
+      font-family: 'Inter', sans-serif; font-size: 0.95rem;
+      outline: none; transition: border-color 0.25s, background 0.25s;
+      margin-bottom: 1.2rem;
+    }
+    .form-input:focus { border-color: #c9a84c; background: rgba(201,168,76,0.05); }
+    .form-input option { background: #0a1628; }
+    .btn-submit {
+      width: 100%; background: linear-gradient(135deg, #c9a84c, #e8943a);
+      color: #030812; font-weight: 800; font-size: 1rem;
+      padding: 1.05rem; border-radius: 50px; border: none;
+      cursor: pointer; box-shadow: 0 10px 35px rgba(201,168,76,0.45);
+      transition: all 0.35s; margin-top: 0.5rem;
+    }
+    .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 16px 50px rgba(201,168,76,0.65); }
+    .form-fine { font-size: 0.73rem; color: #3a4560; text-align: center; margin-top: 1rem; }
+    .form-success-state { display: none; text-align: center; padding: 1rem 0; }
+    .form-success-state .success-emoji { font-size: 3.5rem; margin-bottom: 1rem; }
+    .form-success-state h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #00c884; margin-bottom: 0.7rem; }
+    .form-success-state p { color: #6b7a99; line-height: 1.65; font-size: 0.95rem; }
+
+    /* ---- FLOATING BUTTONS ---- */
+    .float-ctas {
+      position: fixed; bottom: 2rem; right: 2rem;
+      display: flex; flex-direction: column; gap: 0.9rem; z-index: 1100;
+    }
+    .float-btn {
+      width: 58px; height: 58px; border-radius: 50%; border: none;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; cursor: pointer; text-decoration: none;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      transition: all 0.35s;
+    }
+    .float-btn:hover { transform: scale(1.12) translateY(-4px); }
+    .float-wa { background: #25d366; box-shadow: 0 10px 30px rgba(37,211,102,0.5); }
+    .float-call { background: linear-gradient(135deg, #c9a84c, #e8943a); box-shadow: 0 10px 30px rgba(201,168,76,0.5); }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 900px) {
+      .cards-grid { grid-template-columns: 1fr; }
+      .why-grid-3 { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav-menu { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 600px) {
+      .why-grid-3 { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-cta-row { flex-direction: column; align-items: center; }
+      .proj-pricing-strip { grid-template-columns: 1fr; }
+      .proj-card-btns { flex-direction: column; }
+      .hero-stats-row { gap: 1.5rem; }
+    }
+
+    /* Mobile Nav */
+    .nav-mobile-overlay {
+      position: fixed; inset: 0 0 0 auto; width: 280px; top: 70px;
+      background: rgba(3,8,18,0.98); backdrop-filter: blur(24px);
+      display: flex; flex-direction: column; padding: 2rem;
+      gap: 0; z-index: 999;
+      transform: translateX(100%); transition: transform 0.4s ease;
+    }
+    .nav-mobile-overlay.open { transform: translateX(0); }
+    .nav-mobile-overlay a {
+      display: block; padding: 1.1rem 0; color: #e8eaf0;
+      font-size: 1.05rem; font-weight: 600;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      text-decoration: none; transition: color 0.25s;
+    }
+    .nav-mobile-overlay a:hover { color: #c9a84c; }
+  </style>
+</head>
+<body>
+
+  <!-- Animated Background -->
+  <div class="bg-canvas">
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+  </div>
+
+  <!-- Site Navigation -->
+  <nav class="site-nav" id="siteNav">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <img src="images/logo-v2.png" alt="The House of Abhinandan Lodha" />
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#why">Why HOABL</a></li>
+        <li><a href="gulf-of-goa/">HOABL Gulf of Goa</a></li>
+        <li><a href="one-goa/">HOABL One Goa</a></li>
+        <li><a href="#contact" class="nav-cta-btn" id="navEnquire">Enquire Now</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-mobile-overlay" id="mobileNav">
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#pricing" class="mobile-link">Pricing</a>
+    <a href="#why" class="mobile-link">Why HOABL</a>
+    <a href="gulf-of-goa/" class="mobile-link">HOABL Gulf of Goa</a>
+    <a href="one-goa/" class="mobile-link">HOABL One Goa</a>
+    <a href="#contact" class="nav-cta-btn mobile-link" id="mobEnquire" style="margin-top:1.5rem;text-align:center;border-radius:50px;padding:1rem 2rem;display:block;">Enquire Now</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero-section" id="home">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="video/hero-bg.mp4" type="video/mp4" />
+    </video>
+    <div class="video-overlay"></div>
+    
+    <span class="hero-badge reveal" style="position: relative; z-index: 2;">📍 Goa, India</span>
+    <h1 class="hero-title reveal">
+      Own a Piece of <span class="gradient-text">Paradise</span> in Goa
+    </h1>
+    <p class="hero-subtitle reveal">
+      Premium plots, villas & luxury residences by <strong style="color:#c9a84c;">The House of Abhinandan Lodha</strong> in South and North Goa — starting from ₹1.04 Cr.
+    </p>
+    <div class="hero-cta-row reveal">
+      <button class="btn-hero-primary" id="heroEnquire">📋 Get Brochure Now</button>
+      <button class="btn-hero-glass" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">🏝️ Explore Projects</button>
+    </div>
+    <div class="hero-stats-row reveal">
+      <div class="hero-stat"><span class="hero-stat-num">2</span><span class="hero-stat-label">Iconic Projects</span></div>
+      <div class="hero-stat-div"></div>
+      <div class="hero-stat"><span class="hero-stat-num">₹1.04Cr</span><span class="hero-stat-label">Starting Price</span></div>
+      <div class="hero-stat-div"></div>
+      <div class="hero-stat"><span class="hero-stat-num">500+</span><span class="hero-stat-label">Happy Owners</span></div>
+      <div class="hero-stat-div"></div>
+      <div class="hero-stat"><span class="hero-stat-num">200+ Ac</span><span class="hero-stat-label">Developed</span></div>
+    </div>
+  </section>
+
+  <!-- PROJECT HUB CARDS -->
+  <section class="projects-hub" id="projects">
+    <div class="hub-label reveal">
+      <span class="section-tag">Premium Collections</span>
+      <h2>Iconic Goa <span class="gradient-text">Destinations</span></h2>
+      <p>Select a project to view detailed plans, pricing, amenities, and book your exclusive meeting.</p>
+    </div>
+
+    <div class="cards-grid">
+
+      <!-- Gulf of Goa Card -->
+      <div class="proj-card reveal" id="gulfCard" onclick="location.href='gulf-of-goa/'">
+        <img class="proj-card-img" src="images/GULF OF GOA/image-4.avif" alt="Gulf of Goa" onerror="this.src='images/gulf-1.png'" />
+        <div class="proj-card-body">
+          <span class="proj-card-tag">📍 Vasco, South Goa</span>
+          <h2 class="proj-card-name">HOABL Gulf of Goa</h2>
+          <p class="proj-card-loc">Shoreline Premium Development · Dec 2026 onwards</p>
+          <p class="proj-card-desc">Sea-facing plots and Sovereign Bay Estate Villas with tiered infinity pools and exclusive beach club access.</p>
+          <ul class="proj-usps">
+            <li>Premium Sea-Facing Plots (2,411 sq.ft)</li>
+            <li>Sovereign Bay Estate Villas (1,416 sq.ft)</li>
+            <li>Exclusive Beach Club & Infinity Pools</li>
+            <li>Gated Community · 24/7 Security</li>
+          </ul>
+
+          <div class="proj-pricing-strip" id="pricing">
+            <div class="price-pill">
+              <p class="pp-type">Plots</p>
+              <p class="pp-size">2,411 sq.ft</p>
+              <p class="pp-price">₹2.88 Cr*</p>
+              <p class="pp-pos">📅 Dec 2026</p>
+            </div>
+            <div class="price-pill">
+              <p class="pp-type">Villas</p>
+              <p class="pp-size">1,416 sq.ft</p>
+              <p class="pp-price">₹4.50 Cr*</p>
+              <p class="pp-pos">📅 Mar 2028</p>
+            </div>
+          </div>
+
+          <div class="proj-card-btns">
+            <button class="btn-explore" onclick="event.stopPropagation(); location.href='gulf-of-goa/'">Explore Project →</button>
+            <button class="btn-enquire" onclick="event.stopPropagation(); openModal('Gulf of Goa')">Enquire Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- One Goa Card -->
+      <div class="proj-card reveal" id="oneGoaCard" style="transition-delay: 0.15s;" onclick="location.href='one-goa/'">
+        <img class="proj-card-img" src="images/ONE GOA/Scene_02_B362_Evening_View03-scaled.webp" alt="One Goa" onerror="this.src='images/one-2.png'" />
+        <div class="proj-card-body">
+          <span class="proj-card-tag teal">🏝️ Bicholim, North Goa</span>
+          <h2 class="proj-card-name">HOABL One Goa</h2>
+          <p class="proj-card-loc">100+ Acre Island Township · Dec 2026 onwards</p>
+          <p class="proj-card-desc">Inspired by Ibiza & Marbella. An island-themed township with a man-made sea, riverside cafe, and 5-star hospitality by Miros Hotels.</p>
+          <ul class="proj-usps">
+            <li>Residential Plots (1,539 sq.ft)</li>
+            <li>Luxury Apartments (920 sq.ft)</li>
+            <li>Man-Made Sea & Riverside Cafe</li>
+            <li>5-Star Hospitality by Miros Hotels</li>
+          </ul>
+
+          <div class="proj-pricing-strip">
+            <div class="price-pill">
+              <p class="pp-type">Plots</p>
+              <p class="pp-size">1,539 sq.ft</p>
+              <p class="pp-price" style="color:#00d4b1;">₹1.04 Cr*</p>
+              <p class="pp-pos">📅 Dec 2026</p>
+            </div>
+            <div class="price-pill">
+              <p class="pp-type">Apartments</p>
+              <p class="pp-size">920 sq.ft</p>
+              <p class="pp-price" style="color:#00d4b1;">₹1.26 Cr*</p>
+              <p class="pp-pos">📅 Dec 2027</p>
+            </div>
+          </div>
+
+          <div class="proj-card-btns">
+            <button class="btn-explore" style="background: linear-gradient(135deg,#00d4b1,#00c884); box-shadow: 0 8px 28px rgba(0,212,177,0.4);" onclick="event.stopPropagation(); location.href='one-goa/'">Explore Project →</button>
+            <button class="btn-enquire" onclick="event.stopPropagation(); openModal('One Goa')">Enquire Now</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOME PAGE GALLERY -->
+  <section class="proj-section" id="home-gallery" style="padding: 5rem 2rem; max-width: 1260px; margin: 0 auto;">
+    <div class="hub-label reveal">
+      <span class="section-tag">A Glimpse of Paradise</span>
+      <h2>HOABL <span class="gradient-text">Lifestyle Gallery</span></h2>
+      <p>Discover the stunning sea-facing landscapes and world-class amenities waiting for you in Goa.</p>
+    </div>
+    <div class="gallery-masonry reveal" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem;">
+      <img src="images/GULF OF GOA/image-4.avif" alt="Gulf of Goa Main View" style="width: 100%; height: 220px; object-fit: cover; border-radius: 16px; border: 1px solid rgba(255,255,255,0.06);" />
+      <img src="images/ONE GOA/Scene_04_B362_Front_Evening_View_01-scaled.webp" alt="One Goa View" style="width: 100%; height: 220px; object-fit: cover; border-radius: 16px; border: 1px solid rgba(255,255,255,0.06);" />
+      <img src="images/GULF OF GOA/image-5.avif" alt="Gulf of Goa Pool" style="width: 100%; height: 220px; object-fit: cover; border-radius: 16px; border: 1px solid rgba(255,255,255,0.06);" />
+      <img src="images/ONE GOA/Scene_02_B362_Evening_View03-scaled.webp" alt="One Goa Evening" style="width: 100%; height: 220px; object-fit: cover; border-radius: 16px; border: 1px solid rgba(255,255,255,0.06);" />
+      <img src="images/GULF OF GOA/image-7.avif" alt="Gulf of Goa Villa" style="width: 100%; height: 220px; object-fit: cover; border-radius: 16px; border: 1px solid rgba(255,255,255,0.06);" />
+      <img src="images/ONE GOA/Man-Made-Beach-Sea-Experience.webp" alt="One Goa Beach" style="width: 100%; height: 220px; object-fit: cover; border-radius: 16px; border: 1px solid rgba(255,255,255,0.06);" />
+    </div>
+  </section>
+
+  <!-- WHY HOABL -->
+  <section id="why">
+    <div class="why-section">
+      <div class="hub-label reveal">
+        <span class="section-tag">Legacy of Trust</span>
+        <h2>Why <span class="gradient-text">The House of Abhinandan Lodha?</span></h2>
+        <p>India's largest branded land developer, bringing институциональное quality to the open land market.</p>
+      </div>
+      <div class="why-grid-3">
+        <div class="why-item reveal">
+          <div class="why-icon">🏗️</div>
+          <h3>Branded Assurance</h3>
+          <p>Clear titles, registered developments, and institutional quality documentation.</p>
+        </div>
+        <div class="why-item reveal" style="transition-delay:0.1s;">
+          <div class="why-icon">📈</div>
+          <h3>High ROI Potential</h3>
+          <p>Prime Goa locations with proven appreciation in strategic growth corridors.</p>
+        </div>
+        <div class="why-item reveal" style="transition-delay:0.2s;">
+          <div class="why-icon">🔒</div>
+          <h3>Security & Care</h3>
+          <p>Gated communities with round-the-clock security and ongoing estate management.</p>
+        </div>
+        <div class="why-item reveal" style="transition-delay:0.1s;">
+          <div class="why-icon">🌊</div>
+          <h3>Coastal Luxury</h3>
+          <p>Rare sea-facing plots in Goa — an asset class that grows every decade.</p>
+        </div>
+        <div class="why-item reveal" style="transition-delay:0.2s;">
+          <div class="why-icon">🤝</div>
+          <h3>Expert Guidance</h3>
+          <p>Dedicated relationship managers and in-person site visits arranged on request.</p>
+        </div>
+        <div class="why-item reveal" style="transition-delay:0.3s;">
+          <div class="why-icon">💎</div>
+          <h3>Exclusive Listings</h3>
+          <p>Access to limited-edition premium projects before they go to the open market.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INLINE CONTACT FORM -->
+  <section class="proj-section" id="contact-inline" style="padding: 4rem 2rem; max-width: 900px; margin: 0 auto;">
+    <div style="background: rgba(3,8,18,0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; padding: 3rem;">
+      <div class="proj-section-header" style="margin-bottom:2rem; text-align: center;">
+        <span class="section-tag">Register Interest</span>
+        <h2>Get <span class="gradient-text">Expert Assistance</span></h2>
+        <p>Fill in your details below. Our project consultants will reach out within 60 minutes.</p>
+      </div>
+      <div id="inlineFormContainer">
+        <form id="inlineLeadForm">
+          <input type="hidden" name="project" value="General" />
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+            <div>
+              <label class="form-label" style="display:block; text-align:left; font-size:0.8rem; font-weight:600; margin-bottom:0.4rem; color:rgba(232,234,240,0.8);">Full Name *</label>
+              <input class="form-input" style="width:100%;" type="text" name="name" placeholder="Your full name" required />
+            </div>
+            <div>
+              <label class="form-label" style="display:block; text-align:left; font-size:0.8rem; font-weight:600; margin-bottom:0.4rem; color:rgba(232,234,240,0.8);">WhatsApp / Phone *</label>
+              <input class="form-input" style="width:100%;" type="tel" name="phone" placeholder="+91 98765 43210" required />
+            </div>
+          </div>
+          <div style="margin-bottom: 2rem;">
+            <label class="form-label" style="display:block; text-align:left; font-size:0.8rem; font-weight:600; margin-bottom:0.4rem; color:rgba(232,234,240,0.8);">Project of Interest</label>
+            <select class="form-input" style="width:100%;" name="project_interest">
+              <option value="General">Any Project</option>
+              <option value="HOABL Gulf of Goa">HOABL Gulf of Goa</option>
+              <option value="HOABL One Goa">HOABL One Goa</option>
+            </select>
+          </div>
+          <button type="submit" id="submitInlineLead" class="form-submit" style="width:100%; margin-top:0;">Submit Details</button>
+        </form>
+      </div>
+      <div id="inlineSuccessState" class="success-state" style="display:none; text-align:center;">
+        <div class="success-icon" style="font-size:3rem; color:#00d4b1; margin-bottom:1rem;">✓</div>
+        <h3 style="font-family:'Playfair Display',serif; font-size:1.8rem; color:#e8eaf0;">Request Received</h3>
+        <p style="color:#a8b2c1;">Our luxury consultant will contact you shortly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="images/logo-v2.png" alt="HOABL" />
+        </div>
+        <p class="footer-about">Creating generational wealth through strategic land investments in Goa's most pristine locations. Authorized Channel Partner for The House of Abhinandan Lodha.</p>
+        <a href="tel:+918904047669" class="footer-phone">📞 +91 8904047669</a>
+      </div>
+      <div class="footer-col">
+        <h4>Projects</h4>
+        <ul>
+          <li><a href="gulf-of-goa/">HOABL Gulf of Goa – Vasco</a></li>
+          <li><a href="one-goa/">HOABL One Goa – Bicholim</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom-bar">
+      <p class="footer-disclaimer">
+        Disclaimer : The content is for information purposes only and does not constitute an offer to avail of any service. Prices mentioned are subject to change without notice and properties mentioned are subject to availability. Images for representation purposes only. This is the official website of authorized marketing partner. We may also send updates to the mobile number/email id registered with us. All Rights Reserved.(Disclaimer & Privacy Policy)
+      </p>
+      <div class="footer-legal-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="#" onclick="openModal('General')">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Buttons -->
+  <div class="float-ctas">
+    <a href="https://wa.me/918904047669?text=Hi! I'm interested in HOABL Goa projects." target="_blank" class="float-btn float-wa" title="WhatsApp">💬</a>
+    <a href="tel:+918904047669" class="float-btn float-call" title="Call">📞</a>
+  </div>
+
+  <!-- Lead Capture Modal -->
+  <div class="modal-overlay" id="leadModal">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose">✕</button>
+
+      <div id="formContainer">
+        <h2 class="modal-title">Get Expert Assistance</h2>
+        <p class="modal-sub">Fill in your details — our project consultants will reach out within 60 minutes.</p>
+        <form id="leadForm">
+          <input type="hidden" name="project" id="modalProject" value="General" />
+          <div>
+            <label class="form-label">Full Name *</label>
+            <input class="form-input" type="text" name="name" placeholder="Your full name" required />
+          </div>
+          <div>
+            <label class="form-label">WhatsApp / Phone *</label>
+            <input class="form-input" type="tel" name="phone" placeholder="+91 98765 43210" required />
+          </div>
+          <div>
+            <label class="form-label">Select Project *</label>
+            <select class="form-input" name="project_interest" required>
+              <option value="" disabled selected>-- Choose a Project --</option>
+              <option value="Gulf of Goa - Plots">Gulf of Goa – Plots (₹2.88 Cr)</option>
+              <option value="Gulf of Goa - Villas">Gulf of Goa – Villas (₹4.50 Cr)</option>
+              <option value="One Goa - Plots">One Goa – Plots (₹1.04 Cr)</option>
+              <option value="One Goa - Apartments">One Goa – Apartments (₹1.26 Cr)</option>
+              <option value="Both Projects">Both Projects</option>
+            </select>
+          </div>
+          <button class="btn-submit" type="submit" id="submitLead">Submit Enquiry →</button>
+          <p class="form-fine">By submitting, you agree to our <a href="privacy.html" style="color:#c9a84c;">Privacy Policy</a>.</p>
+        </form>
+      </div>
+
+      <div class="form-success-state" id="successState">
+        <div class="success-emoji">🎉</div>
+        <h3>Enquiry Received!</h3>
+        <p>Our HOABL project consultant will contact you within 60 minutes on WhatsApp and Phone. Thank you!</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ---- NAVBAR SCROLL ----
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // ---- HAMBURGER ----
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('active');
+    });
+    document.querySelectorAll('.mobile-link').forEach(l => {
+      l.addEventListener('click', () => { mobileNav.classList.remove('open'); hamburger.classList.remove('active'); });
+    });
+
+    // ---- SCROLL REVEAL ----
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.01, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal').forEach((el) => {
+      observer.observe(el);
+    });
+    // Safety fallback: make all reveals visible after 1.5s anyway
+    setTimeout(() => { document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')); }, 1500);
+
+    // ---- MODAL ----
+    const modal = document.getElementById('leadModal');
+    const modalClose = document.getElementById('modalClose');
+    const modalProject = document.getElementById('modalProject');
+
+    function openModal(project) {
+      modalProject.value = project || 'General';
+      // Pre-select project in dropdown
+      const sel = document.querySelector('select[name="project_interest"]');
+      if (sel && project && project !== 'General') {
+        for (let opt of sel.options) {
+          if (opt.value.toLowerCase().startsWith(project.toLowerCase())) { sel.value = opt.value; break; }
+        }
+      }
+      modal.classList.add('open');
+    }
+    window.openModal = openModal;
+
+    modalClose.addEventListener('click', () => modal.classList.remove('open'));
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
+
+    document.getElementById('navEnquire').addEventListener('click', (e) => { e.preventDefault(); openModal('General'); });
+    document.getElementById('heroEnquire').addEventListener('click', () => openModal('General'));
+    if (document.getElementById('mobEnquire')) {
+      document.getElementById('mobEnquire').addEventListener('click', (e) => { e.preventDefault(); openModal('General'); });
+    }
+
+    // ---- FORM SUBMISSION ----
+    document.getElementById('leadForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitLead');
+      const origText = btn.textContent;
+      btn.textContent = 'Submitting...';
+      btn.disabled = true;
+
+      const data = new FormData(this);
+
+      try {
+        const res = await fetch('backend/submit_lead.php', { method: 'POST', body: data });
+        const json = await res.json();
+        if (json.success) {
+          document.getElementById('formContainer').style.display = 'none';
+          document.getElementById('successState').style.display = 'block';
+          setTimeout(() => { window.location.href = 'thank-you.html'; }, 2000);
+        } else {
+          alert('Error: ' + (json.message || 'Please try again'));
+          btn.textContent = origText; btn.disabled = false;
+        }
+      } catch (err) {
+        // Fallback for no backend
+        document.getElementById('formContainer').style.display = 'none';
+        document.getElementById('successState').style.display = 'block';
+        setTimeout(() => { window.location.href = 'thank-you.html'; }, 2000);
+      }
+    });
+
+    // ---- INLINE FORM SUBMISSION ----
+    const inlineLeadForm = document.getElementById('inlineLeadForm');
+    if (inlineLeadForm) {
+      inlineLeadForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('submitInlineLead');
+        const origText = btn.textContent;
+        btn.textContent = 'Submitting...';
+        btn.disabled = true;
+
+        const data = new FormData(this);
+
+        try {
+          const res = await fetch('backend/submit_lead.php', { method: 'POST', body: data });
+          const json = await res.json();
+          if (json.success) {
+            document.getElementById('inlineFormContainer').style.display = 'none';
+            document.getElementById('inlineSuccessState').style.display = 'block';
+            setTimeout(() => { window.location.href = 'thank-you.html'; }, 2000);
+          } else {
+            alert('Error: ' + (json.message || 'Please try again'));
+            btn.textContent = origText; btn.disabled = false;
+          }
+        } catch (err) {
+          // Fallback for no backend
+          document.getElementById('inlineFormContainer').style.display = 'none';
+          document.getElementById('inlineSuccessState').style.display = 'block';
+          setTimeout(() => { window.location.href = 'thank-you.html'; }, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

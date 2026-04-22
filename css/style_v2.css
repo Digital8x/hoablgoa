@@ -1,0 +1,125 @@
+/* ===== PREMIUM 3D GLASSMORPISM V2 (BUTTER WORLD CLASS) ===== */
+
+:root {
+  --gold: #c9a84c;
+  --gold-glass: rgba(201,168,76,0.15);
+  --navy-deep: #030812;
+  --navy-dark: #050a14;
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: blur(25px);
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+  --accent-teal: #00d4b1;
+  --accent-green: #25d366; /* WhatsApp Green */
+  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ===== ANIMATED MESH BACKGROUND ===== */
+.mesh-bg {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  z-index: -2; background-color: var(--navy-deep);
+  overflow: hidden;
+}
+.mesh-bg::after {
+  content: ""; position: absolute; inset: -50%;
+  background: 
+    radial-gradient(circle at 20% 30%, hsla(210,100%,15%,1) 0, transparent 50%), 
+    radial-gradient(circle at 80% 20%, hsla(45,60%,10%,1) 0, transparent 50%), 
+    radial-gradient(circle at 40% 80%, hsla(160,50%,8%,1) 0, transparent 50%),
+    radial-gradient(circle at 70% 70%, hsla(210,100%,12%,1) 0, transparent 50%);
+  filter: blur(120px); animation: meshMove 25s ease-in-out infinite alternate;
+}
+
+/* Floating Orbs for extra depth */
+.orb {
+  position: absolute; border-radius: 50%;
+  filter: blur(80px); opacity: 0.1;
+  animation: floatOrb 15s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+.orb-1 { width: 400px; height: 400px; background: var(--gold); top: 10%; left: 10%; animation-delay: 0s; }
+.orb-2 { width: 500px; height: 500px; background: #1a6fff; bottom: 10%; right: 10%; animation-delay: -5s; }
+.orb-3 { width: 300px; height: 300px; background: var(--accent-teal); top: 50%; left: 50%; animation-delay: -10s; }
+
+@keyframes meshMove {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  50% { transform: translate(5%, 5%) rotate(2deg) scale(1.1); }
+  100% { transform: translate(-2%, -5%) rotate(-1deg) scale(1.05); }
+}
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(100px, 150px) scale(1.2); }
+}
+
+
+/* ===== MODAL STYLES ===== */
+.modal {
+  position: fixed; inset: 0; z-index: 2000;
+  display: flex; align-items: center; justify-content: center;
+  padding: 1rem; opacity: 0; pointer-events: none;
+  transition: opacity 0.4s var(--transition);
+  background: rgba(0,0,0,0.6); backdrop-filter: blur(8px);
+}
+.modal.open { opacity: 1; pointer-events: auto; }
+.modal-content {
+  background: rgba(10, 22, 40, 0.85);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-radius: 28px; width: 100%; max-width: 500px;
+  padding: 2.5rem; position: relative;
+  transform: translateY(30px) scale(0.95);
+  transition: transform 0.5s var(--transition);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+}
+.modal.open .modal-content { transform: translateY(0) scale(1); }
+.close-modal {
+  position: absolute; top: 1.2rem; right: 1.2rem;
+  background: none; border: none; color: #fff; font-size: 1.5rem;
+  cursor: pointer; opacity: 0.6; transition: opacity 0.2s;
+}
+.close-modal:hover { opacity: 1; }
+
+/* ===== FLOATING BUTTONS ===== */
+.floating-ctas {
+  position: fixed; bottom: 1.5rem; right: 1.5rem;
+  display: flex; flex-direction: column; gap: 0.8rem; z-index: 1001;
+}
+.float-btn {
+  width: 56px; height: 56px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: transform 0.3s var(--transition), box-shadow 0.3s;
+  cursor: pointer; border: none; text-decoration: none;
+}
+.float-btn:hover { transform: scale(1.1) translateY(-5px); }
+.float-whatsapp { background: #25d366; }
+.float-call { background: var(--gold); color: #050a14; }
+
+/* ===== REFINED UI ELEMENTS ===== */
+.navbar .logo-img { height: 48px; width: auto; filter: none; }
+.nav-partner-tag { font-size: 0.65rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.8; }
+
+.section-tag { color: var(--gold); font-weight: 700; letter-spacing: 0.2em; font-size: 0.75rem; }
+.premium-card {
+  background: var(--glass); border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+  border-radius: 24px; transition: var(--transition); overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+.premium-card:hover { transform: translateY(-10px) scale(1.02); border-color: rgba(201,168,76,0.3); }
+
+/* Additional butter-smooth polish */
+.btn-premium {
+  background: linear-gradient(135deg, var(--gold), #e8943a);
+  color: #050a14 !important; font-weight: 800;
+  padding: 1rem 2.4rem; border-radius: 50px;
+  border: none; cursor: pointer; transition: var(--transition);
+  box-shadow: 0 15px 35px rgba(201,168,76,0.4);
+  display: inline-flex; align-items: center; gap: 0.6rem;
+}
+.btn-premium:hover { transform: translateY(-3px); box-shadow: 0 20px 50px rgba(201,168,76,0.6); }
+
+.privacy-link { color: var(--text-muted); font-size: 0.75rem; text-decoration: underline; cursor: pointer; margin-top: 1rem; display: inline-block; }
