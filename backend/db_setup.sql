@@ -1,8 +1,6 @@
 -- Run this SQL in phpMyAdmin or MySQL CLI to create the leads table
 
-CREATE DATABASE IF NOT EXISTS hoabl_leads CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-USE hoabl_leads;
+USE a1679hju_hoablgoa;
 
 CREATE TABLE IF NOT EXISTS leads (
     id           INT AUTO_INCREMENT PRIMARY KEY,
