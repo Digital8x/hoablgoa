@@ -93,7 +93,10 @@ try {
   <h1>🏝️ HOABL Leads Admin</h1>
   <div style="display:flex; align-items:center; gap:1.5rem;">
     <span class="header-meta">Logged in as: <?= htmlspecialchars(ADMIN_USER) ?> &nbsp;|&nbsp; <?= date('d M Y, h:i A') ?></span>
-    <a href="index.php?logout=1" style="background:rgba(229,62,62,0.1); color:#fc8181; padding:0.4rem 1rem; border-radius:50px; text-decoration:none; font-size:0.75rem; font-weight:600; border:1px solid rgba(229,62,62,0.2); transition:0.2s;" onmouseover="this.style.background='rgba(229,62,62,0.2)'" onmouseout="this.style.background='rgba(229,62,62,0.1)'">Logout</a>
+    <div style="display:flex; gap:0.5rem;">
+      <a href="settings.php" style="background:rgba(201,168,76,0.1); color:#c9a84c; padding:0.4rem 1rem; border-radius:50px; text-decoration:none; font-size:0.75rem; font-weight:600; border:1px solid rgba(201,168,76,0.2);">Settings</a>
+      <a href="index.php?logout=1" style="background:rgba(229,62,62,0.1); color:#fc8181; padding:0.4rem 1rem; border-radius:50px; text-decoration:none; font-size:0.75rem; font-weight:600; border:1px solid rgba(229,62,62,0.2);">Logout</a>
+    </div>
   </div>
 </div>
 
@@ -132,6 +135,7 @@ try {
           <th>Project Interest</th>
           <th>Location</th>
           <th>Device</th>
+          <th>IP Address</th>
           <th>Message</th>
           <th>Action</th>
         </tr>
@@ -156,6 +160,7 @@ try {
                 <small style="color:#8898b5;"><?= htmlspecialchars($lead['country'] ?? 'Unknown') ?></small>
             </td>
             <td><small><?= htmlspecialchars($lead['device'] ?? 'Unknown') ?></small></td>
+            <td><small style="color:#6b7a99;"><?= htmlspecialchars($lead['ip_address'] ?? 'N/A') ?></small></td>
             <td class="msg" title="<?= htmlspecialchars($lead['message'] ?? '') ?>"><?= htmlspecialchars(substr($lead['message'] ?? '', 0, 40)) . (strlen($lead['message'] ?? '') > 40 ? '…' : '') ?></td>
             <td>
                 <?php if (isset($lead['id'])): ?>
