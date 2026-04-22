@@ -137,13 +137,22 @@
     @media (max-width: 900px) { .pricing-row { grid-template-columns: 1fr; } .amenities-grid { grid-template-columns: 1fr 1fr; } .gallery-masonry { grid-template-columns: 1fr 1fr; } .gallery-masonry img:first-child { grid-column: 1 / 3; height: 240px; } }
     @media (max-width: 640px) { .hero-btns { flex-direction: column; } .dl-row { flex-direction: column; } .proj-hero-name { font-size: 2.6rem; } }
     /* Gated Cards Mobile Fix */
-    /* Gated Cards Mobile Fix */
+    /* Gated Cards Layout Fix */
+    .gated-wrap { position: relative; border-radius: 20px; overflow: hidden; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); margin-bottom: 3rem; display: flex; flex-direction: column; cursor: pointer; transition: 0.3s; }
+    .gated-wrap:hover { transform: translateY(-5px); border-color: #00d4b1; }
+    .gated-img-container { position: relative; height: 300px; overflow: hidden; }
+    .gated-img-container img { width: 100%; height: 100%; object-fit: cover; filter: blur(25px); opacity: 0.5; transition: 0.3s; }
+    .gated-content-below { padding: 2.5rem; text-align: center; background: rgba(8,16,34,0.6); border-top: 1px solid rgba(255,255,255,0.1); }
+    .gated-lock-icon { font-size: 2.5rem; margin-bottom: 1rem; color: #c9a84c; display: block; }
+    .gated-text { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; color: #fff; }
+    .gated-sub { color: #a8b2c1; font-size: 1rem; margin-bottom: 1.5rem; }
+    .gated-btn { display: inline-block; padding: 0.9rem 2rem; background: linear-gradient(135deg, #00d4b1, #00c884); color: #030812; font-weight: 800; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; border:none; }
+    
     @media (max-width: 600px) {
-      .gated-text { font-size: 1.4rem !important; margin-bottom: 0.5rem !important; }
-      .gated-sub { font-size: 0.8rem !important; padding: 0 1rem; }
-      .gated-overlay { padding: 1.5rem !important; }
-      .gated-lock { font-size: 1.5rem !important; }
-      .gated-btn { padding: 0.7rem 1.2rem !important; font-size: 0.8rem !important; }
+      .gated-img-container { height: 180px; }
+      .gated-content-below { padding: 1.5rem; }
+      .gated-text { font-size: 1.4rem !important; }
+      .gated-sub { font-size: 0.9rem; }
       .proj-section-header h2 { font-size: 2rem !important; }
       #contact-inline > div { padding: 2rem !important; }
     }
@@ -154,18 +163,24 @@
     .lightbox-close { position: absolute; top: 2rem; right: 2rem; color: #fff; font-size: 2.5rem; cursor: pointer; opacity: 0.7; z-index: 10001; }
     .lightbox-close:hover { opacity: 1; }
 
-    /* Mobile Sidebar Styles */
-    .mobile-drawer { position: fixed; top: 0; left: -100%; width: 80%; height: 100%; background: #030812; z-index: 10001; transition: 0.4s; padding: 3rem 2rem; box-shadow: 20px 0 50px rgba(0,0,0,0.8); }
-    .mobile-drawer.open { left: 0; }
-    .mobile-drawer ul { list-style: none; padding: 0; margin-top: 2rem; }
-    .mobile-drawer ul li { margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1rem; }
-    .mobile-drawer ul li a { color: #fff; text-decoration: none; font-size: 1.1rem; font-weight: 600; display: block; }
-    .drawer-close { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 2rem; color: #c9a84c; cursor: pointer; }
-    .hamburger { display: none; cursor: pointer; font-size: 1.8rem; color: #fff; padding: 0.5rem; }
+    /* Gated Cards Layout Fix */
+    .gated-wrap { position: relative; border-radius: 20px; overflow: hidden; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); margin-bottom: 3rem; display: flex; flex-direction: column; cursor: pointer; transition: 0.3s; }
+    .gated-wrap:hover { transform: translateY(-5px); border-color: #00d4b1; }
+    .gated-img-container { position: relative; height: 300px; overflow: hidden; }
+    .gated-img-container img { width: 100%; height: 100%; object-fit: cover; filter: blur(25px); opacity: 0.5; transition: 0.3s; }
+    .gated-content-below { padding: 2.5rem; text-align: center; background: rgba(8,16,34,0.6); border-top: 1px solid rgba(255,255,255,0.1); }
+    .gated-lock-icon { font-size: 2.5rem; margin-bottom: 1rem; color: #c9a84c; display: block; }
+    .gated-text { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; color: #fff; }
+    .gated-sub { color: #a8b2c1; font-size: 1rem; margin-bottom: 1.5rem; }
+    .gated-btn { display: inline-block; padding: 0.9rem 2rem; background: linear-gradient(135deg, #00d4b1, #00c884); color: #030812; font-weight: 800; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; border:none; }
     
-    @media (max-width: 991px) {
-      .proj-menu { display: none; }
-      .hamburger { display: block; }
+    @media (max-width: 600px) {
+      .gated-img-container { height: 180px; }
+      .gated-content-below { padding: 1.5rem; }
+      .gated-text { font-size: 1.4rem !important; }
+      .gated-sub { font-size: 0.9rem; }
+      .proj-section-header h2 { font-size: 2rem !important; }
+      #contact-inline > div { padding: 2rem !important; }
     }
   </style>
 </head>
@@ -293,11 +308,13 @@
       <p>Register to receive the full high-resolution island master plan — sent directly to your WhatsApp.</p>
     </div>
     <div class="gated-wrap reveal" onclick="openModal('Master Plan')">
-      <img src="../images/ONE GOA/one-goa-plots-by-hoabl-banner-1-quj0gl8zgwlhjf5bplebxcc8ddxmx9ijad85l7oio8.webp" alt="Master Plan" />
-      <div class="gated-overlay">
-        <span class="gated-lock">🔒</span>
-        <p class="gated-text">High-Res Island Master Plan</p>
-        <p class="gated-sub">Register to receive the full master plan on WhatsApp</p>
+      <div class="gated-img-container">
+        <img src="../images/ONE GOA/one-goa-plots-by-hoabl-banner-1-quj0gl8zgwlhjf5bplebxcc8ddxmx9ijad85l7oio8.webp" alt="Master Plan" />
+      </div>
+      <div class="gated-content-below">
+        <span class="gated-lock-icon">🔒</span>
+        <h3 class="gated-text">High-Res Island Master Plan</h3>
+        <p class="gated-sub">Register to receive the full high-resolution master plan directly on your WhatsApp.</p>
         <button class="gated-btn">View Master Plan →</button>
       </div>
     </div>
@@ -311,11 +328,13 @@
       <p>Bicholim, North Goa — surrounded by nature, connected to the state's hubs via National Highway.</p>
     </div>
     <div class="gated-wrap reveal" onclick="openModal('Location Map')">
-      <img src="../images/ONE GOA/40.webp" alt="Location Map" />
-      <div class="gated-overlay">
-        <span class="gated-lock">📍</span>
-        <p class="gated-text">Detailed Location Map</p>
-        <p class="gated-sub">Verify your details to download the high-res location map</p>
+      <div class="gated-img-container">
+        <img src="../images/ONE GOA/40.webp" alt="Location Map" />
+      </div>
+      <div class="gated-content-below">
+        <span class="gated-lock-icon">📍</span>
+        <h3 class="gated-text">Detailed Location Map</h3>
+        <p class="gated-sub">Verify your details to download the high-res connectivity and neighborhood map.</p>
         <button class="gated-btn">Download Location Map →</button>
       </div>
     </div>
@@ -328,10 +347,12 @@
       <h2>Luxury Floor Plans</h2>
       <p>Discover the meticulously designed internal layouts of our premium plots and holiday apartments.</p>
     </div>
-    <div class="gated-wrap reveal" onclick="openModal('Floor Plan')" style="aspect-ratio: 16/9;">
-      <img src="../images/ONE GOA/Scene_02_B362_Evening_View03-scaled.webp" alt="Floor Plan" />
-      <div class="gated-overlay">
-        <div class="gated-lock">📜</div>
+    <div class="gated-wrap reveal" onclick="openModal('Floor Plan')">
+      <div class="gated-img-container">
+        <img src="../images/ONE GOA/Scene_02_B362_Evening_View03-scaled.webp" alt="Floor Plan" />
+      </div>
+      <div class="gated-content-below">
+        <span class="gated-lock-icon">📜</span>
         <h3 class="gated-text">Unlock Floor Plans</h3>
         <p class="gated-sub">Submit details to receive the high-resolution floor plans via WhatsApp.</p>
         <button class="gated-btn">Request Detailed Layouts</button>
@@ -346,16 +367,19 @@
       <h2>Project Walk-Through</h2>
       <p>Take a virtual flight over the island township and experience the scale of HOABL One Goa.</p>
     </div>
-    <div class="gated-wrap reveal" onclick="openModal('Walkthrough')" style="aspect-ratio: 16/9; background: #000;">
-      <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; z-index: 5;">
-         <div style="width: 80px; height: 80px; background: #00d4b1; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 0 0 15px rgba(0,212,177,0.2); transition: 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-            <div style="width: 0; height: 0; border-top: 12px solid transparent; border-bottom: 12px solid transparent; border-left: 20px solid #030812; margin-left: 5px;"></div>
-         </div>
+    <div class="gated-wrap reveal" onclick="openModal('Walkthrough')" style="background: #000;">
+      <div class="gated-img-container" style="height: auto; aspect-ratio: 16/9;">
+        <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; z-index: 5;">
+           <div style="width: 80px; height: 80px; background: #00d4b1; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 0 0 15px rgba(0,212,177,0.2); transition: 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+              <div style="width: 0; height: 0; border-top: 12px solid transparent; border-bottom: 12px solid transparent; border-left: 20px solid #030812; margin-left: 5px;"></div>
+           </div>
+        </div>
+        <img src="../images/ONE GOA/3-Sea-and-Beach-Aerial-scaled.webp" alt="Walkthrough Preview" style="filter: none; opacity: 1; height: 100%;" />
       </div>
-      <img src="../images/ONE GOA/3-Sea-and-Beach-Aerial-scaled.webp" alt="Walkthrough Preview" style="object-fit: cover;" />
-      <div class="gated-overlay" style="background: transparent; justify-content: flex-end; padding-bottom: 3rem;">
+      <div class="gated-content-below">
         <h3 class="gated-text">Premium Virtual Tour</h3>
-        <p class="gated-sub">Click to register and unlock the full cinematic walkthrough</p>
+        <p class="gated-sub">Click above to register and unlock the full cinematic walkthrough</p>
+        <button class="gated-btn">Unlock Video Tour →</button>
       </div>
     </div>
   </section>
