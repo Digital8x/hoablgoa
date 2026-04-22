@@ -137,13 +137,22 @@
     @media (max-width: 900px) { .pricing-row { grid-template-columns: 1fr; } .amenities-grid { grid-template-columns: 1fr 1fr; } .gallery-masonry { grid-template-columns: 1fr 1fr; } .gallery-masonry img:first-child { grid-column: 1 / 3; height: 240px; } }
     @media (max-width: 640px) { .hero-btns { flex-direction: column; } .dl-row { flex-direction: column; } .proj-hero-name { font-size: 2.6rem; } }
     /* Gated Cards Mobile Fix */
+    /* Gated Cards Mobile Fix */
     @media (max-width: 600px) {
       .gated-text { font-size: 1.4rem !important; margin-bottom: 0.5rem !important; }
       .gated-sub { font-size: 0.8rem !important; padding: 0 1rem; }
       .gated-overlay { padding: 1.5rem !important; }
       .gated-lock { font-size: 1.5rem !important; }
       .gated-btn { padding: 0.7rem 1.2rem !important; font-size: 0.8rem !important; }
+      .proj-section-header h2 { font-size: 2rem !important; }
+      #contact-inline > div { padding: 2rem !important; }
     }
+
+    /* Lightbox Styles */
+    .lightbox-overlay { position: fixed; inset: 0; background: rgba(3,8,18,0.98); z-index: 10000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(20px); }
+    .lightbox-img { max-width: 90%; max-height: 90%; border-radius: 12px; box-shadow: 0 50px 100px rgba(0,0,0,0.8); }
+    .lightbox-close { position: absolute; top: 2rem; right: 2rem; color: #fff; font-size: 2.5rem; cursor: pointer; opacity: 0.7; z-index: 10001; }
+    .lightbox-close:hover { opacity: 1; }
 
     /* Mobile Sidebar Styles */
     .mobile-drawer { position: fixed; top: 0; left: -100%; width: 80%; height: 100%; background: #030812; z-index: 10001; transition: 0.4s; padding: 3rem 2rem; box-shadow: 20px 0 50px rgba(0,0,0,0.8); }
@@ -152,7 +161,7 @@
     .mobile-drawer ul li { margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1rem; }
     .mobile-drawer ul li a { color: #fff; text-decoration: none; font-size: 1.1rem; font-weight: 600; display: block; }
     .drawer-close { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 2rem; color: #c9a84c; cursor: pointer; }
-    .hamburger { display: none; cursor: pointer; font-size: 1.5rem; color: #fff; }
+    .hamburger { display: none; cursor: pointer; font-size: 1.8rem; color: #fff; padding: 0.5rem; }
     
     @media (max-width: 991px) {
       .proj-menu { display: none; }
@@ -181,7 +190,7 @@
   <!-- STICKY NAV -->
   <nav class="proj-sticky">
     <div class="proj-sticky-inner">
-      <div class="hamburger" onclick="toggleDrawer()">☰ Menu</div>
+      <div class="hamburger" onclick="toggleDrawer()">☰</div>
       <ul class="proj-menu">
         <li><a href="#about">About</a></li>
         <li><a href="#gallery">Gallery</a></li>
@@ -343,7 +352,7 @@
             <div style="width: 0; height: 0; border-top: 12px solid transparent; border-bottom: 12px solid transparent; border-left: 20px solid #030812; margin-left: 5px;"></div>
          </div>
       </div>
-      <img src="../images/ONE GOA/3-Sea-and-Beach-Aerial-scaled.webp" alt="Walkthrough Preview" style="opacity: 0.4;" />
+      <img src="../images/ONE GOA/3-Sea-and-Beach-Aerial-scaled.webp" alt="Walkthrough Preview" style="object-fit: cover;" />
       <div class="gated-overlay" style="background: transparent; justify-content: flex-end; padding-bottom: 3rem;">
         <h3 class="gated-text">Premium Virtual Tour</h3>
         <p class="gated-sub">Click to register and unlock the full cinematic walkthrough</p>
