@@ -24,10 +24,10 @@
       background: #030812;
     }
     .bg-video {
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.85; pointer-events: none; z-index: 0;
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1; pointer-events: none; z-index: 0;
     }
     .video-overlay {
-      position: absolute; inset: 0; background: rgba(3,8,18,0.4); pointer-events: none; z-index: 1;
+      position: absolute; inset: 0; background: rgba(3,8,18,0.55); pointer-events: none; z-index: 1;
     }
     .hero-section > *:not(.bg-video):not(.video-overlay) {
       position: relative; z-index: 2;
@@ -445,7 +445,7 @@
 
   <!-- HERO -->
   <section class="hero-section" id="home">
-    <video class="bg-video" autoplay muted loop playsinline preload="metadata" poster="images/ONE GOA/one-goa-plots-by-hoabl-banner-1-quj0gl8zgwlhjf5bplebxcc8ddxmx9ijad85l7oio8.webp">
+    <video class="bg-video" autoplay muted loop playsinline poster="images/ONE GOA/one-goa-plots-by-hoabl-banner-1-quj0gl8zgwlhjf5bplebxcc8ddxmx9ijad85l7oio8.webp">
       <source src="video/hero-bg.mp4" type="video/mp4">
     </video>
     <div class="video-overlay"></div>
