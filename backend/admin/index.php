@@ -1,7 +1,19 @@
 <?php
 require_once __DIR__ . '/../config.php';
 
-// ===== HTTP BASIC AUTH =====
+// ===== HTTP BASIC AUTH (Fix for CGI/FastCGI) =====
+if (!isset($_SERVER['PHP_AUTH_USER'])) {
+    if (isset($_SERVER['HTTP_AUTHORIZATION']) && stripos($_SERVER['HTTP_AUTHORIZATION'], 'basic') === 0) {
+        list($user, $pass) = explode(':', base64_decode(substr($_SERVER['HTTP_AUTHORIZATION'], 6)));
+        $_SERVER['PHP_AUTH_USER'] = $user;
+        $_SERVER['PHP_AUTH_PW'] = $pass;
+    } elseif (isset($_SERVER['REDIRECT_HTTP_AUTHORIZATION']) && stripos($_SERVER['REDIRECT_HTTP_AUTHORIZATION'], 'basic') === 0) {
+        list($user, $pass) = explode(':', base64_decode(substr($_SERVER['REDIRECT_HTTP_AUTHORIZATION'], 6)));
+        $_SERVER['PHP_AUTH_USER'] = $user;
+        $_SERVER['PHP_AUTH_PW'] = $pass;
+    }
+}
+
 if (!isset($_SERVER['PHP_AUTH_USER']) ||
     $_SERVER['PHP_AUTH_USER'] !== ADMIN_USER ||
     $_SERVER['PHP_AUTH_PW']   !== ADMIN_PASS) {
