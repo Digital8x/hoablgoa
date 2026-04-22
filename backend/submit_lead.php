@@ -17,10 +17,12 @@ function clean($val) {
     return htmlspecialchars(strip_tags(trim($val ?? '')));
 }
 
+date_default_timezone_set('Asia/Kolkata');
+
 $name    = clean($_POST['name'] ?? '');
 $phone   = clean($_POST['phone'] ?? '');
 $email   = clean($_POST['email'] ?? '');
-$project = clean($_POST['project'] ?? '');
+$project = clean($_POST['project_interest'] ?? $_POST['project'] ?? 'General Enquiry');
 $message = clean($_POST['message'] ?? '');
 
 // Validation

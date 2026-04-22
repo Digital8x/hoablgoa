@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Kolkata');
 // ===== DATABASE CONFIGURATION =====
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'a1679hju_hoablgoa');
