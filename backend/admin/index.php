@@ -24,7 +24,6 @@ try {
         DB_USER, DB_PASS,
         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
     );
-    );
     // ----- DELETE LEAD LOGIC -----
     if (isset($_GET['delete'])) {
         $delId = (int)$_GET['delete'];
