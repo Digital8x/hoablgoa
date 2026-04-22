@@ -32,6 +32,15 @@ try {
         DB_USER, DB_PASS,
         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
     );
+    );
+    // ----- DELETE LEAD LOGIC -----
+    if (isset($_GET['delete'])) {
+        $delId = (int)$_GET['delete'];
+        $stmt = $pdo->prepare("DELETE FROM leads WHERE id = ?");
+        $stmt->execute([$delId]);
+        header("Location: index.php?msg=deleted");
+        exit;
+    }
     $leads = $pdo->query("SELECT * FROM leads ORDER BY created_at DESC")->fetchAll(PDO::FETCH_ASSOC);
 } catch (Exception $e) {
     $error = 'DB Error: ' . $e->getMessage();
@@ -130,11 +139,15 @@ try {
           <th>Email</th>
           <th>Project Interest</th>
           <th>Message</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
+        <?php if (isset($_GET['msg']) && $_GET['msg'] === 'deleted'): ?>
+          <tr><td colspan="8" style="background:rgba(229,62,62,0.1); color:#fc8181; text-align:center; padding:0.5rem;">Lead deleted successfully.</td></tr>
+        <?php endif; ?>
         <?php if (empty($leads)): ?>
-          <tr><td colspan="7" class="empty">No leads yet. Share your website to start collecting enquiries!</td></tr>
+          <tr><td colspan="8" class="empty">No leads yet. Share your website to start collecting enquiries!</td></tr>
         <?php else: ?>
           <?php foreach ($leads as $i => $lead): ?>
           <tr>
@@ -145,6 +158,13 @@ try {
             <td><?= htmlspecialchars($lead['email'] ?? '') ?></td>
             <td class="project" title="<?= htmlspecialchars($lead['project'] ?? '') ?>"><?= htmlspecialchars($lead['project'] ?? '') ?></td>
             <td class="msg" title="<?= htmlspecialchars($lead['message'] ?? '') ?>"><?= htmlspecialchars(substr($lead['message'] ?? '', 0, 60)) . (strlen($lead['message'] ?? '') > 60 ? '…' : '') ?></td>
+            <td>
+                <?php if (isset($lead['id'])): ?>
+                <a href="?delete=<?= $lead['id'] ?>" onclick="return confirm('Are you sure you want to delete this lead?')" style="color:#fc8181; text-decoration:none; font-size:0.75rem; border:1px solid rgba(229,62,62,0.3); padding:2px 8px; border-radius:4px;">Delete</a>
+                <?php else: ?>
+                <span style="color:#4a5568; font-size:0.7rem;">(CSV)</span>
+                <?php endif; ?>
+            </td>
           </tr>
           <?php endforeach; ?>
         <?php endif; ?>
