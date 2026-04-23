@@ -121,11 +121,11 @@
 
     /* Gated Cards — PREMIUM WOW REDESIGN */
     .gated-wrap { 
-      position: relative; border-radius: 28px; overflow: hidden; 
-      background: rgba(10,20,40,0.4); border: 1px solid rgba(255,255,255,0.08); 
-      margin-bottom: 4rem; display: flex; flex-direction: column; 
-      cursor: pointer; transition: all 0.5s cubic-bezier(0.16,1,0.3,1); 
-      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+      position: relative; border-radius: 24px; overflow: hidden; 
+      background: rgba(10,20,40,0.6); border: 1px solid rgba(255,255,255,0.08); 
+      margin-bottom: 3rem; display: flex; flex-direction: column; 
+      cursor: pointer; transition: all 0.4s ease;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     }
     .gated-wrap:hover { 
       transform: translateY(-12px); border-color: rgba(201,168,76,0.4); 
@@ -174,14 +174,17 @@
       line-height: 1.6;
     }
     .gated-btn { 
-      display: flex; align-items: center; justify-content: center; gap: 0.6rem;
-      padding: 1.2rem 3.5rem; background: linear-gradient(135deg, #c9a84c, #e8943a); 
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+      padding: 1rem 2.5rem; background: linear-gradient(135deg, #c9a84c, #e8943a); 
       color: #030812; font-weight: 800; border-radius: 50px; 
-      text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.95rem; 
+      text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; 
       border: none; cursor: pointer; transition: all 0.3s;
-      box-shadow: 0 12px 35px rgba(201,168,76,0.45);
-      margin: -2rem auto 4rem; position: relative; z-index: 10;
-      width: fit-content;
+      box-shadow: 0 10px 25px rgba(201,168,76,0.4);
+      margin-top: 1rem;
+    }
+    .gated-btn:hover { 
+      transform: translateY(-3px); 
+      box-shadow: 0 15px 35px rgba(201,168,76,0.6);
     }
 
     /* Amenities */
@@ -407,13 +410,12 @@
         <img src="../images/GULF OF GOA/image-7.avif" alt="Master Plan Preview" />
       </div>
       <div class="gated-content-below">
-        <span class="gated-badge">Premium Asset</span>
         <span class="gated-lock-icon">🔒</span>
-        <h3 class="gated-text">High-Res Master Plan</h3>
-        <p class="gated-sub">Secure access to the complete site architectural layout via WhatsApp.</p>
+        <h3 class="gated-text" style="font-size: 1.5rem;">High-Res Master Plan</h3>
+        <p class="gated-sub" style="font-size: 0.9rem;">Secure access to the complete site architectural layout via WhatsApp.</p>
+        <button class="gated-btn">Unlock Plan Now →</button>
       </div>
     </div>
-    <button class="gated-btn reveal" onclick="openModal('Master Plan')">Unlock Plan Now →</button>
   </section>
 
   <!-- GATED — LOCATION MAP -->
@@ -428,13 +430,12 @@
         <img src="../images/GULF OF GOA/image-5.avif" alt="Location Map" />
       </div>
       <div class="gated-content-below">
-        <span class="gated-badge">Connectivity Guide</span>
         <span class="gated-lock-icon">📍</span>
-        <h3 class="gated-text">Detailed Location Map</h3>
-        <p class="gated-sub">Download the high-precision map including neighborhood connectivity.</p>
+        <h3 class="gated-text" style="font-size: 1.5rem;">Detailed Location Map</h3>
+        <p class="gated-sub" style="font-size: 0.9rem;">Download the high-precision map including neighborhood connectivity.</p>
+        <button class="gated-btn">Get Location Map →</button>
       </div>
     </div>
-    <button class="gated-btn reveal" onclick="openModal('Location Map')">Get Location Map →</button>
   </section>
 
   <!-- FLOOR PLAN -->
@@ -449,13 +450,12 @@
         <img src="../images/GULF OF GOA/image-7.avif" alt="Floor Plan" />
       </div>
       <div class="gated-content-below">
-        <span class="gated-badge">Internal Layout</span>
         <span class="gated-lock-icon">📜</span>
-        <h3 class="gated-text">Luxury Floor Plans</h3>
-        <p class="gated-sub">Request the detailed internal configurations for our villas and plots.</p>
+        <h3 class="gated-text" style="font-size: 1.5rem;">Luxury Floor Plans</h3>
+        <p class="gated-sub" style="font-size: 0.9rem;">Request the detailed internal configurations for our villas and plots.</p>
+        <button class="gated-btn">Unlock Layouts →</button>
       </div>
     </div>
-    <button class="gated-btn reveal" onclick="openModal('Floor Plan')">Unlock Layouts →</button>
   </section>
 
   <!-- WALK THROUGH -->
@@ -468,19 +468,18 @@
     <div class="gated-wrap reveal" onclick="openModal('Walkthrough')" style="background: #000;">
       <div class="gated-img-container" style="height: auto; aspect-ratio: 16/9;">
         <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; z-index: 10;">
-           <div style="width: 75px; height: 75px; background: #c9a84c; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 0 0 0 rgba(201,168,76,0.4); animation: pulse 2s infinite;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-              <div style="width: 0; height: 0; border-top: 12px solid transparent; border-bottom: 12px solid transparent; border-left: 20px solid #030812; margin-left: 5px;"></div>
+           <div style="width: 65px; height: 65px; background: #c9a84c; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 0 0 0 rgba(201,168,76,0.4); animation: pulse 2s infinite;">
+              <div style="width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 16px solid #030812; margin-left: 5px;"></div>
            </div>
         </div>
         <img src="../images/GULF OF GOA/image-4.avif" alt="Walkthrough Preview" style="filter: brightness(0.6) !important; opacity: 1 !important; height: 100%; display: block;" />
       </div>
-      <div class="gated-content-below" style="padding-bottom: 4rem;">
-        <span class="gated-badge">Cinematic Tour</span>
-        <h3 class="gated-text">Premium Virtual Tour</h3>
-        <p class="gated-sub">Take a high-definition cinematic flight through the Gulf of Goa project.</p>
+      <div class="gated-content-below">
+        <h3 class="gated-text" style="font-size: 1.5rem;">Premium Virtual Tour</h3>
+        <p class="gated-sub" style="font-size: 0.9rem;">Take a high-definition cinematic flight through the Gulf of Goa project.</p>
+        <button class="gated-btn">Play Virtual Tour →</button>
       </div>
     </div>
-    <button class="gated-btn reveal" onclick="openModal('Walkthrough')" style="margin-top: -3.5rem;">Play Virtual Tour →</button>
     
     <style>
       @keyframes pulse {
