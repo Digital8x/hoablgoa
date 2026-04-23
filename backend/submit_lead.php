@@ -87,57 +87,64 @@ try {
     $settings = $pdo->query("SELECT * FROM settings WHERE id = 1")->fetch(PDO::FETCH_ASSOC);
 
     // ===== SEND EMAIL =====
+    $mail = new PHPMailer(true);
+    $toEmail = LEAD_EMAIL_TO;
+    $ccEmail = defined('LEAD_EMAIL_CC') ? LEAD_EMAIL_CC : '';
+
     if ($settings) {
-        $mail = new PHPMailer(true);
+        $toEmail = !empty($settings['notify_email']) ? $settings['notify_email'] : $toEmail;
+        $ccEmail = !empty($settings['notify_email_cc']) ? $settings['notify_email_cc'] : $ccEmail;
+    }
 
-        try {
-            // Server settings
-            if (USE_SMTP || (isset($settings['use_smtp']) && $settings['use_smtp'] == 1)) {
-                $mail->isSMTP();
-                $mail->Host       = SMTP_HOST;
-                $mail->SMTPAuth   = true;
-                $mail->Username   = SMTP_USER;
-                $mail->Password   = SMTP_PASS;
-                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-                $mail->Port       = SMTP_PORT;
-            }
-
-            // Recipients
-            $toEmail = $settings['notify_email'] ? $settings['notify_email'] : LEAD_EMAIL_TO;
-            $ccEmail = isset($settings['notify_email_cc']) && !empty($settings['notify_email_cc']) ? $settings['notify_email_cc'] : (defined('LEAD_EMAIL_CC') ? LEAD_EMAIL_CC : '');
+    try {
+        // Server settings
+        $useSmtp = (USE_SMTP || (isset($settings['use_smtp']) && $settings['use_smtp'] == 1));
+        
+        if ($useSmtp) {
+            $mail->isSMTP();
+            // Use database settings if available, otherwise fallback to config constants
+            $mail->Host       = (!empty($settings['smtp_host'])) ? $settings['smtp_host'] : SMTP_HOST;
+            $mail->SMTPAuth   = true;
+            $mail->Username   = (!empty($settings['smtp_user'])) ? $settings['smtp_user'] : SMTP_USER;
+            $mail->Password   = (!empty($settings['smtp_pass'])) ? $settings['smtp_pass'] : SMTP_PASS;
             
-            $mail->setFrom(LEAD_EMAIL_FROM, LEAD_EMAIL_NAME);
-            $mail->addAddress($toEmail);
-            
-            if (!empty($ccEmail)) {
-                $mail->addCC($ccEmail);
-            }
-
-            if (!empty($email)) {
-                $mail->addReplyTo($email, $name);
-            }
-
-            // Content
-            $mail->isHTML(false);
-            $mail->Subject = "New Lead: $name ($project)";
-            $mail->Body    = "New lead received:\n\nName: $name\nPhone: $phone\nEmail: $email\nProject: $project\nMessage: $message\nDevice: $device\nLocation: $city, $country\nIP: $ip\nTime: " . date('Y-m-d H:i:s');
-
-            $mail->send();
-        } catch (Exception $e) {
-            // Fallback to mail() if PHPMailer fails and SMTP is not strictly required
-            error_log("PHPMailer Error: {$mail->ErrorInfo}");
-            
-            $headers = "From: " . LEAD_EMAIL_NAME . " <" . LEAD_EMAIL_FROM . ">\r\n";
-            if (!empty($ccEmail)) {
-                $headers .= "Cc: " . $ccEmail . "\r\n";
-            }
-            if (!empty($email)) {
-                $headers .= "Reply-To: $name <$email>\r\n";
-            }
-            $headers .= "MIME-Version: 1.0\r\n";
-            $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-            mail($toEmail, "New Lead: $name ($project)", $mail->Body, $headers);
+            $secure = (!empty($settings['smtp_secure'])) ? $settings['smtp_secure'] : 'tls';
+            $mail->SMTPSecure = ($secure == 'ssl') ? PHPMailer::ENCRYPTION_SMTPS : PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port       = (!empty($settings['smtp_port'])) ? (int)$settings['smtp_port'] : SMTP_PORT;
         }
+
+        // Recipients
+        $mail->setFrom(LEAD_EMAIL_FROM, LEAD_EMAIL_NAME);
+        $mail->addAddress($toEmail);
+        
+        if (!empty($ccEmail)) {
+            $mail->addCC($ccEmail);
+        }
+
+        if (!empty($email)) {
+            $mail->addReplyTo($email, $name);
+        }
+
+        // Content
+        $mail->isHTML(false);
+        $mail->Subject = "New Lead: $name ($project)";
+        $mail->Body    = "New lead received:\n\nName: $name\nPhone: $phone\nEmail: $email\nProject: $project\nMessage: $message\nDevice: $device\nLocation: $city, $country\nIP: $ip\nTime: " . date('Y-m-d H:i:s');
+
+        $mail->send();
+    } catch (Exception $e) {
+        // Fallback to mail() if PHPMailer fails
+        error_log("PHPMailer Error: {$mail->ErrorInfo}");
+        
+        $headers = "From: " . LEAD_EMAIL_NAME . " <" . LEAD_EMAIL_FROM . ">\r\n";
+        if (!empty($ccEmail)) {
+            $headers .= "Cc: " . $ccEmail . "\r\n";
+        }
+        if (!empty($email)) {
+            $headers .= "Reply-To: $name <$email>\r\n";
+        }
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+        mail($toEmail, "New Lead: $name ($project)", "New lead received:\n\nName: $name\nPhone: $phone\nEmail: $email\nProject: $project\nMessage: $message\nDevice: $device\nLocation: $city, $country\nIP: $ip\nTime: " . date('Y-m-d H:i:s'), $headers);
     }
 
     echo json_encode(['success' => true, 'message' => 'Lead captured successfully!']);
