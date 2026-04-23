@@ -140,22 +140,15 @@
     /* Gated Cards Layout Fix */
     .gated-wrap { position: relative; border-radius: 20px; overflow: hidden; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); margin-bottom: 3rem; display: flex; flex-direction: column; cursor: pointer; transition: 0.3s; }
     .gated-wrap:hover { transform: translateY(-5px); border-color: #00d4b1; }
-    .gated-img-container { position: relative; height: 300px; overflow: hidden; }
-    .gated-img-container img { width: 100%; height: 100%; object-fit: cover; filter: blur(25px); opacity: 0.5; transition: 0.3s; }
+    .gated-img-container { position: relative; height: 300px; overflow: hidden; background: #000; display: block; }
+    .gated-img-container img { width: 100%; height: 100%; object-fit: cover; filter: blur(25px); opacity: 0.5; transition: 0.3s; display: block; }
     .gated-content-below { padding: 2.5rem; text-align: center; background: rgba(8,16,34,0.6); border-top: 1px solid rgba(255,255,255,0.1); }
     .gated-lock-icon { font-size: 2.5rem; margin-bottom: 1rem; color: #c9a84c; display: block; }
     .gated-text { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; color: #fff; }
     .gated-sub { color: #a8b2c1; font-size: 1rem; margin-bottom: 1.5rem; }
     .gated-btn { display: inline-block; padding: 0.9rem 2rem; background: linear-gradient(135deg, #00d4b1, #00c884); color: #030812; font-weight: 800; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; border:none; }
     
-    @media (max-width: 600px) {
-      .gated-img-container { height: 180px; }
-      .gated-content-below { padding: 1.5rem; }
-      .gated-text { font-size: 1.4rem !important; }
-      .gated-sub { font-size: 0.9rem; }
-      .proj-section-header h2 { font-size: 2rem !important; }
-      #contact-inline > div { padding: 2rem !important; }
-    }
+    .section-tag { display: inline-block; color: #00d4b1; background: rgba(0,212,177,0.1); border: 1px solid rgba(0,212,177,0.2); padding: 0.3rem 1rem; border-radius: 50px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
 
     /* Lightbox Styles */
     .lightbox-overlay { position: fixed; inset: 0; background: rgba(3,8,18,0.98); z-index: 10000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(20px); }
@@ -163,19 +156,23 @@
     .lightbox-close { position: absolute; top: 2rem; right: 2rem; color: #fff; font-size: 2.5rem; cursor: pointer; opacity: 0.7; z-index: 10001; }
     .lightbox-close:hover { opacity: 1; }
 
-    /* Gated Cards Layout Fix */
-    .gated-wrap { position: relative; border-radius: 20px; overflow: hidden; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); margin-bottom: 3rem; display: flex; flex-direction: column; cursor: pointer; transition: 0.3s; }
-    .gated-wrap:hover { transform: translateY(-5px); border-color: #00d4b1; }
-    .gated-img-container { position: relative; height: 300px; overflow: hidden; }
-    .gated-img-container img { width: 100%; height: 100%; object-fit: cover; filter: blur(25px); opacity: 0.5; transition: 0.3s; }
-    .gated-content-below { padding: 2.5rem; text-align: center; background: rgba(8,16,34,0.6); border-top: 1px solid rgba(255,255,255,0.1); }
-    .gated-lock-icon { font-size: 2.5rem; margin-bottom: 1rem; color: #c9a84c; display: block; }
-    .gated-text { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; color: #fff; }
-    .gated-sub { color: #a8b2c1; font-size: 1rem; margin-bottom: 1.5rem; }
-    .gated-btn { display: inline-block; padding: 0.9rem 2rem; background: linear-gradient(135deg, #00d4b1, #00c884); color: #030812; font-weight: 800; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; border:none; }
-    
+    /* Mobile Sidebar Styles */
+    .mobile-drawer { position: fixed; top: 0; left: -100%; width: 80%; height: 100%; background: #030812; z-index: 10001; transition: 0.4s; padding: 3rem 2rem; box-shadow: 20px 0 50px rgba(0,0,0,0.8); }
+    .mobile-drawer.open { left: 0; }
+    .mobile-drawer ul { list-style: none; padding: 0; margin-top: 2rem; }
+    .mobile-drawer ul li { margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1rem; }
+    .mobile-drawer ul li a { color: #fff; text-decoration: none; font-size: 1.1rem; font-weight: 600; display: block; }
+    .drawer-close { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 2rem; color: #00d4b1; cursor: pointer; }
+    .hamburger { display: none; cursor: pointer; font-size: 1.8rem; color: #fff; padding: 0.5rem; }
+
+    @media (max-width: 991px) {
+      .proj-menu { display: none; }
+      .hamburger { display: block; }
+      .proj-sticky-inner { justify-content: space-between; }
+    }
+
     @media (max-width: 600px) {
-      .gated-img-container { height: 180px; }
+      .gated-img-container { height: 220px; }
       .gated-content-below { padding: 1.5rem; }
       .gated-text { font-size: 1.4rem !important; }
       .gated-sub { font-size: 0.9rem; }
@@ -368,13 +365,13 @@
       <p>Take a virtual flight over the island township and experience the scale of HOABL One Goa.</p>
     </div>
     <div class="gated-wrap reveal" onclick="openModal('Walkthrough')" style="background: #000;">
-      <div class="gated-img-container" style="height: auto; aspect-ratio: 16/9;">
+      <div class="gated-img-container" style="height: auto; aspect-ratio: 16/9; background: #000;">
         <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; z-index: 5;">
            <div style="width: 80px; height: 80px; background: #00d4b1; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 0 0 15px rgba(0,212,177,0.2); transition: 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
               <div style="width: 0; height: 0; border-top: 12px solid transparent; border-bottom: 12px solid transparent; border-left: 20px solid #030812; margin-left: 5px;"></div>
            </div>
         </div>
-        <img src="../images/ONE GOA/3-Sea-and-Beach-Aerial-scaled.webp" alt="Walkthrough Preview" style="filter: none; opacity: 1; height: 100%;" />
+        <img src="../images/ONE%20GOA/3-Sea-and-Beach-Aerial-scaled.webp" alt="Walkthrough Preview" style="filter: none !important; opacity: 1 !important; height: 100%; display: block; width: 100%; object-fit: cover;" />
       </div>
       <div class="gated-content-below">
         <h3 class="gated-text">Premium Virtual Tour</h3>
