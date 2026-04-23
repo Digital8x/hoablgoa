@@ -89,6 +89,9 @@ try {
         $body = "New lead received:\n\nName: $name\nPhone: $phone\nEmail: $email\nProject: $project\nMessage: $message\nDevice: $device\nLocation: $city, $country\nIP: $ip\nTime: " . date('Y-m-d H:i:s');
         
         $headers = "From: " . LEAD_EMAIL_NAME . " <" . LEAD_EMAIL_FROM . ">\r\n";
+        if (defined('LEAD_EMAIL_CC') && !empty(LEAD_EMAIL_CC)) {
+            $headers .= "Cc: " . LEAD_EMAIL_CC . "\r\n";
+        }
         if (!empty($email)) {
             $headers .= "Reply-To: $name <$email>\r\n";
         }
