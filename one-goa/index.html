@@ -184,17 +184,18 @@
       line-height: 1.6;
     }
     .gated-btn { 
-      display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
-      padding: 1rem 2.5rem; background: linear-gradient(135deg, #00d4b1, #00c884); 
+      display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+      padding: 1.1rem 2.8rem; background: linear-gradient(135deg, #00d4b1, #00c884); 
       color: #030812; font-weight: 800; border-radius: 50px; 
-      text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; 
+      text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.9rem; 
       border: none; cursor: pointer; transition: all 0.3s;
-      box-shadow: 0 10px 25px rgba(0,212,177,0.4);
-      margin-top: 1rem;
+      box-shadow: 0 12px 35px rgba(0,212,177,0.45);
+      margin: -2.2rem auto 4rem; position: relative; z-index: 10;
+      width: fit-content;
     }
     .gated-btn:hover { 
-      transform: translateY(-3px); 
-      box-shadow: 0 15px 35px rgba(0,212,177,0.6);
+      transform: translateY(-4px) scale(1.03); 
+      box-shadow: 0 18px 50px rgba(0,212,177,0.6);
     }
     
     .section-tag { display: inline-block; color: #00d4b1; background: rgba(0,212,177,0.1); border: 1px solid rgba(0,212,177,0.2); padding: 0.3rem 1rem; border-radius: 50px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
@@ -361,9 +362,9 @@
         <span class="gated-lock-icon">🔒</span>
         <h3 class="gated-text" style="font-size: 1.5rem;">High-Res Master Plan</h3>
         <p class="gated-sub" style="font-size: 0.9rem;">Secure the high-resolution architectural blueprint of the township.</p>
-        <button class="gated-btn">Unlock Blueprint →</button>
       </div>
     </div>
+    <button class="gated-btn reveal" onclick="openModal('Master Plan')">Unlock Blueprint →</button>
   </section>
 
   <!-- GATED — LOCATION MAP -->
@@ -381,9 +382,9 @@
         <span class="gated-lock-icon">📍</span>
         <h3 class="gated-text" style="font-size: 1.5rem;">Detailed Location Map</h3>
         <p class="gated-sub" style="font-size: 0.9rem;">Verify your details to download the high-res connectivity guide.</p>
-        <button class="gated-btn">Get Location Map →</button>
       </div>
     </div>
+    <button class="gated-btn reveal" onclick="openModal('Location Map')">Get Location Map →</button>
   </section>
 
   <!-- FLOOR PLAN -->
@@ -401,9 +402,9 @@
         <span class="gated-lock-icon">📜</span>
         <h3 class="gated-text" style="font-size: 1.5rem;">Luxury Floor Plans</h3>
         <p class="gated-sub" style="font-size: 0.9rem;">Receive the high-resolution internal configurations via WhatsApp.</p>
-        <button class="gated-btn">Request Layouts →</button>
       </div>
     </div>
+    <button class="gated-btn reveal" onclick="openModal('Floor Plan')">Request Layouts →</button>
   </section>
 
   <!-- WALK THROUGH -->
@@ -425,9 +426,9 @@
       <div class="gated-content-below">
         <h3 class="gated-text" style="font-size: 1.5rem;">Premium Virtual Tour</h3>
         <p class="gated-sub" style="font-size: 0.9rem;">Experience a cinematic aerial tour of the entire One Goa island township.</p>
-        <button class="gated-btn">Play Video Tour →</button>
       </div>
     </div>
+    <button class="gated-btn reveal" onclick="openModal('Walkthrough')" style="margin-top:-3.5rem;">Play Video Tour →</button>
     
     <style>
       @keyframes pulseTeal {
