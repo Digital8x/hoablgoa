@@ -7,25 +7,55 @@ if (!isset($_SESSION['hoabl_logged_in'])) {
     exit;
 }
 
+require_once __DIR__ . '/../vendor/autoload.php';
+use PHPMailer\PHPMailer\PHPMailer;
+
 $pdo = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME, DB_USER, DB_PASS, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
 $msg = '';
 $error = '';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    try {
-        $stmt = $pdo->prepare("UPDATE settings SET 
-            notify_email = ?, notify_email_cc = ?, use_smtp = ?, smtp_host = ?, smtp_port = ?, 
-            smtp_user = ?, smtp_pass = ?, smtp_secure = ? WHERE id = 1");
-        $stmt->execute([
-            $_POST['notify_email'], $_POST['notify_email_cc'], isset($_POST['use_smtp']) ? 1 : 0, 
-            $_POST['smtp_host'], (int)$_POST['smtp_port'],
-            $_POST['smtp_user'], $_POST['smtp_pass'], $_POST['smtp_secure']
-        ]);
-        $msg = 'Settings updated successfully!';
-    } catch (Exception $e) {
-        $error = 'Update failed: ' . $e->getMessage();
-        if (strpos($e->getMessage(), "Unknown column 'notify_email_cc'") !== false) {
-            $error .= "<br><br><strong>Note:</strong> You need to run the database update. Please visit <a href='../update_db.php' target='_blank' style='color: #c9a84c; text-decoration: underline;'>hoablgoa.com/backend/update_db.php</a> in your browser, then try saving again.";
+    if (isset($_POST['save_settings'])) {
+        try {
+            $stmt = $pdo->prepare("UPDATE settings SET 
+                notify_email = ?, notify_email_cc = ?, use_smtp = ?, smtp_host = ?, smtp_port = ?, 
+                smtp_user = ?, smtp_pass = ?, smtp_secure = ? WHERE id = 1");
+            $stmt->execute([
+                $_POST['notify_email'], $_POST['notify_email_cc'], isset($_POST['use_smtp']) ? 1 : 0, 
+                $_POST['smtp_host'], (int)$_POST['smtp_port'],
+                $_POST['smtp_user'], $_POST['smtp_pass'], $_POST['smtp_secure']
+            ]);
+            $msg = 'Settings updated successfully!';
+        } catch (Exception $e) {
+            $error = 'Update failed: ' . $e->getMessage();
+            if (strpos($e->getMessage(), "Unknown column 'notify_email_cc'") !== false) {
+                $error .= "<br><br><strong>Note:</strong> You need to run the database update. Please visit <a href='../update_db.php' target='_blank' style='color: #c9a84c; text-decoration: underline;'>hoablgoa.com/backend/update_db.php</a> in your browser, then try saving again.";
+            }
+        }
+    } elseif (isset($_POST['test_smtp'])) {
+        try {
+            $mail = new PHPMailer(true);
+            $mail->isSMTP();
+            $mail->Host       = $_POST['smtp_host'];
+            $mail->SMTPAuth   = true;
+            $mail->Username   = $_POST['smtp_user'];
+            $mail->Password   = $_POST['smtp_pass'];
+            $mail->SMTPSecure = ($_POST['smtp_secure'] == 'ssl') ? PHPMailer::ENCRYPTION_SMTPS : PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port       = (int)$_POST['smtp_port'];
+            $mail->Timeout    = 10;
+
+            $mail->setFrom(LEAD_EMAIL_FROM, 'SMTP Test');
+            $mail->addAddress($_POST['notify_email']);
+            
+            $mail->isHTML(false);
+            $mail->Subject = "SMTP Test Email";
+            $mail->Body    = "This is a test email to verify your SMTP settings for HOABL Goa.";
+
+            $mail->send();
+            $msg = 'Test email sent successfully! Please check your inbox.';
+        } catch (Exception $e) {
+            $error = 'SMTP Error: ' . $mail->ErrorInfo;
         }
     }
 }
@@ -105,7 +135,10 @@ $settings = $pdo->query("SELECT * FROM settings WHERE id = 1")->fetch(PDO::FETCH
                 <input type="password" name="smtp_pass" value="<?= htmlspecialchars($settings['smtp_pass']) ?>">
             </div>
 
-            <button type="submit" class="btn-save">SAVE SETTINGS</button>
+            <div style="display: flex; gap: 1rem;">
+                <button type="submit" name="save_settings" class="btn-save">SAVE SETTINGS</button>
+                <button type="submit" name="test_smtp" class="btn-save" style="background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.1);">TEST SMTP</button>
+            </div>
         </form>
     </div>
 </body>
