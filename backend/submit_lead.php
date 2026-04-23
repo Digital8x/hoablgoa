@@ -84,10 +84,17 @@ try {
 
     // ===== SEND EMAIL =====
     if ($settings) {
-        $to = $settings['notify_email'];
+        $to = $settings['notify_email'] ? $settings['notify_email'] : LEAD_EMAIL_TO;
         $subject = "New Lead: $name ($project)";
-        $body = "New lead received:\n\nName: $name\nPhone: $phone\nEmail: $email\nProject: $project\nMessage: $message\nDevice: $device\nLocation: $city, $country\nIP: $ip";
-        $headers = "From: " . LEAD_EMAIL_FROM . "\r\n";
+        $body = "New lead received:\n\nName: $name\nPhone: $phone\nEmail: $email\nProject: $project\nMessage: $message\nDevice: $device\nLocation: $city, $country\nIP: $ip\nTime: " . date('Y-m-d H:i:s');
+        
+        $headers = "From: " . LEAD_EMAIL_NAME . " <" . LEAD_EMAIL_FROM . ">\r\n";
+        if (!empty($email)) {
+            $headers .= "Reply-To: $name <$email>\r\n";
+        }
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+        $headers .= "X-Mailer: PHP/" . phpversion();
         
         if ($settings['use_smtp'] == 1) {
             // Note: True SMTP requires a library like PHPMailer. 
