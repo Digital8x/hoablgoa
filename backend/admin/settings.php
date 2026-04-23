@@ -10,16 +10,24 @@ if (!isset($_SESSION['hoabl_logged_in'])) {
 $pdo = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME, DB_USER, DB_PASS, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
 $msg = '';
+$error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $stmt = $pdo->prepare("UPDATE settings SET 
-        notify_email = ?, notify_email_cc = ?, use_smtp = ?, smtp_host = ?, smtp_port = ?, 
-        smtp_user = ?, smtp_pass = ?, smtp_secure = ? WHERE id = 1");
-    $stmt->execute([
-        $_POST['notify_email'], $_POST['notify_email_cc'], isset($_POST['use_smtp']) ? 1 : 0, 
-        $_POST['smtp_host'], (int)$_POST['smtp_port'],
-        $_POST['smtp_user'], $_POST['smtp_pass'], $_POST['smtp_secure']
-    ]);
-    $msg = 'Settings updated successfully!';
+    try {
+        $stmt = $pdo->prepare("UPDATE settings SET 
+            notify_email = ?, notify_email_cc = ?, use_smtp = ?, smtp_host = ?, smtp_port = ?, 
+            smtp_user = ?, smtp_pass = ?, smtp_secure = ? WHERE id = 1");
+        $stmt->execute([
+            $_POST['notify_email'], $_POST['notify_email_cc'], isset($_POST['use_smtp']) ? 1 : 0, 
+            $_POST['smtp_host'], (int)$_POST['smtp_port'],
+            $_POST['smtp_user'], $_POST['smtp_pass'], $_POST['smtp_secure']
+        ]);
+        $msg = 'Settings updated successfully!';
+    } catch (Exception $e) {
+        $error = 'Update failed: ' . $e->getMessage();
+        if (strpos($e->getMessage(), "Unknown column 'notify_email_cc'") !== false) {
+            $error .= "<br><br><strong>Note:</strong> You need to run the database update. Please visit <a href='../update_db.php' target='_blank' style='color: #c9a84c; text-decoration: underline;'>hoablgoa.com/backend/update_db.php</a> in your browser, then try saving again.";
+        }
+    }
 }
 
 $settings = $pdo->query("SELECT * FROM settings WHERE id = 1")->fetch(PDO::FETCH_ASSOC);
@@ -49,6 +57,7 @@ $settings = $pdo->query("SELECT * FROM settings WHERE id = 1")->fetch(PDO::FETCH
         <h1>⚙️ Email & SMTP Settings</h1>
         
         <?php if ($msg): ?><div class="msg"><?= $msg ?></div><?php endif; ?>
+        <?php if ($error): ?><div class="msg" style="background: rgba(200,0,0,0.1); color: #ff5e5e; border-color: rgba(200,0,0,0.2);"><?= $error ?></div><?php endif; ?>
 
         <form method="POST">
             <div class="form-group">
