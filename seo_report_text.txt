@@ -1,0 +1,448 @@
+
+
+52
+SEO HEALTH
+/ 100
+NEEDS IMPROVEMENT
+SEO AUDIT REPORT
+HOABL Goa
+hoablgoa.com
+Authorized Channel Partner | The House of Abhinandan Lodha | Goa Real Estate
+Prepared: April 23, 2026 | Skill: claude-seo v1.9.0 | Industry: Real Estate
+
+HOABL GOA — SEO AUDIT REPORThoablgoa.com
+Confidential — 23 Apr 2026 — claude-seo v1.9.0Page 2
+Table of Contents
+1.Executive Summary & SEO Health Score
+2.Site Architecture & Business Type Detection
+3.Technical SEO Audit
+4.On-Page SEO Analysis (All Pages)
+5.Content Quality & E-E-A-T Assessment
+6.Schema & Structured Data
+7.Performance & Core Web Vitals
+8.Image Optimisation
+9.Competitive Landscape Analysis
+10.AI Search Readiness (GEO)
+11.Local SEO Signals
+12.Search Experience (SXO)
+13.Backlinks & Domain Authority
+14.Prioritised Action Plan
+
+HOABL GOA — SEO AUDIT REPORThoablgoa.com
+Confidential — 23 Apr 2026 — claude-seo v1.9.0Page 3
+1. Executive Summary & SEO Health Score
+CategoryWeightScoreRating
+Technical SEO22%52/100n Needs Work
+Content Quality23%55/100n Needs Work
+On-Page SEO20%48/100n Needs Work
+Schema / Structured Data10%12/100n Critical
+Performance (CWV)10%50/100n Needs Work
+AI Search Readiness10%38/100n Poor
+Images5%60/100n Fair
+OVERALL SEO HEALTH SCORE100%52/100nn  NEEDS IMPROVEMENT
+hoablgoa.com is a multi-page real estate marketing website for The House of Abhinandan Lodha's Goa
+projects, operated by Digital8x as an Authorized Channel Partner. It covers the homepage plus two dedicated
+project pages (Gulf of Goa and One Goa). This gives it a structurally stronger base than a single-page microsite —
+but the site has zero Google indexation (site:hoablgoa.com returns no results), meaning it competes against 10+
+rival microsites for the same HOABL Goa keywords purely via paid ads. The core problems are: no schema, weak
+meta tags, no sitemap, absent Open Graph, and a competitive landscape where better-optimised rivals already
+occupy every organic keyword. Fixing the listed critical issues within 2 weeks could begin driving organic leads
+within 4–8 weeks.
+Top 5 Critical Issues
+n CRITICAL
+Zero Google Indexation: site:hoablgoa.com returns 0 results. The site is invisible to organic
+search despite having 3 pages of solid content.
+n CRITICAL
+No Schema / Structured Data: Zero JSON-LD markup on any page. Competitor microsites with
+RealEstateListing schema earn richer SERP features.
+n CRITICAL
+Weak / Missing Meta Tags: Homepage title is generic ('Own a Piece of Paradise in Goa').
+Sub-pages have basic titles. No meta descriptions confirmed on any page.
+n CRITICAL
+No XML Sitemap Submitted: No sitemap detected. With 3 pages and no external links, Google
+cannot discover any page without direct URL submission.
+n CRITICAL
+No Open Graph / Social Preview Tags: OG tags absent. When shared on WhatsApp or
+Facebook, pages show no preview image — critical for real estate viral sharing.
+Top 5 Quick Wins
+n Win 1: Submit all 3 pages to Google Search Console URL Inspection and request indexing today.
+n Win 2: Add unique meta title + description to all 3 pages (homepage + Gulf of Goa + One Goa).
+n Win 3: Add Open Graph tags to all pages — critical for WhatsApp/Facebook lead sharing in Indian RE market.
+n Win 4: Implement JSON-LD RealEstateListing schema on both project pages.
+n Win 5: Generate sitemap.xml via site generator and submit to Google Search Console.
+
+HOABL GOA — SEO AUDIT REPORThoablgoa.com
+Confidential — 23 Apr 2026 — claude-seo v1.9.0Page 4
+2. Site Architecture & Business Type Detection
+SignalDetected ValueSEO Implication
+Site TypeMulti-page HTML/JS website (3 pages)n Better than single-page microsite
+Business TypeReal Estate — Luxury Plots & Villas (Channel Partner)Targets transactional + investment keywords
+BrandThe House of Abhinandan Lodha (HOABL)High brand search volume — capitalize on it
+Projects2: Gulf of Goa (Vasco) + One Goa (Bicholim)Each project deserves its own optimised page
+MarketIndia — luxury investment property (n1.04 Cr – n4.50 Cr)HNI buyer persona — WhatsApp-first funnel
+Phone / WhatsApp+91 8904047669 (present on all pages)n Good for local SEO
+AddressGoa, India (no specific street address)nn Insufficient for Google Business Profile
+RERA DisclosureNot visible on any pagen Legal risk + trust deficit
+CMS/TechCustom HTML + vanilla JS (no WordPress detected)n Fast base, but no SEO plugin automatically
+SSLHTTPS active (hoablgoa.com)n Confirmed
+Video Backgroundhero-bg.mp4 used on homepagenn Heavy asset — potential LCP killer on mobile
+Internal LinksProper nav links between homepage and project pagesn Good site graph structure
+External LinksLink to hoabl.com (official brand site)n Appropriate authority link
+Site Graph: Homepage (hoablgoa.com) → Gulf of Goa (/gulf-of-goa/) → One Goa (/one-goa/) + Privacy Policy
+(/privacy.html). The 3-page structure is a meaningful advantage over single-page rivals. Each project page has its
+own URL slug, which enables independent keyword targeting and individual page indexation.
+
+HOABL GOA — SEO AUDIT REPORThoablgoa.com
+Confidential — 23 Apr 2026 — claude-seo v1.9.0Page 5
+3. Technical SEO Audit
+Indexation Status [CRITICAL]
+• site:hoablgoa.com returns ZERO results — all 3 pages are unindexed.
+• The domain appears relatively new. However, no indexation after launch is a sign of possible noindex meta tags,
+robots.txt block, or GSC not set up.
+• ACTION: Check page source on all 3 pages for meta name='robots' content='noindex'. Verify robots.txt
+at hoablgoa.com/robots.txt.
+• ACTION: Set up Google Search Console, verify domain ownership, and submit URL Inspection for all
+pages.
+XML Sitemap [CRITICAL]
+• No sitemap.xml detected at hoablgoa.com/sitemap.xml.
+• With a custom HTML site (no CMS auto-generation), sitemap must be created manually.
+• ACTION: Create sitemap.xml listing all 4 URLs (homepage, gulf-of-goa, one-goa, privacy) and submit
+via GSC.
+Canonical Tags [HIGH]
+• No canonical tags confirmed across any page.
+• The Gulf of Goa page is accessible at both /gulf-of-goa and /gulf-of-goa/ (trailing slash variant) — potential
+duplicate.
+• ACTION: Add self-referencing canonical to all pages. Standardise trailing slash handling.
+robots.txt [HIGH]
+• robots.txt content could not be independently fetched. Must be manually verified.
+• If Disallow: / is present, Googlebot cannot crawl anything.
+• ACTION: Ensure robots.txt only blocks /images/ directory (if desired) and allows all main pages.
+Video Background (hero-bg.mp4) [HIGH]
+• The homepage uses an MP4 video as the hero background (video/hero-bg.mp4).
+• This is a significant LCP risk on mobile — video files are never LCP candidates but delay all other resource
+loading.
+• ACTION: Lazy-load the video. On mobile, replace with a static WebP/AVIF image using a CSS media
+query.
+HTTPS / Security [GOOD]
+• HTTPS confirmed on hoablgoa.com. SSL certificate active.
+• No mixed-content issues detected from source analysis.
+• Recommend: Add HSTS header and basic Content-Security-Policy via server config.
+Mobile Responsiveness [MEDIUM]
+• Navigation includes a hamburger menu (visible via JS toggle), indicating mobile-aware design.
+
+HOABL GOA — SEO AUDIT REPORThoablgoa.com
+Confidential — 23 Apr 2026 — claude-seo v1.9.0Page 6
+• Cannot confirm without live Lighthouse mobile test. Video background will likely cause mobile performance
+issues.
+• ACTION: Run Google Mobile-Friendly Test on all 3 pages.
+Page Speed Assets [HIGH]
+• Gallery images on project pages use .avif and .webp formats — excellent format choices.
+• However, some images are loaded at full resolution with filename paths containing spaces (e.g. 'GULF OF
+GOA/image-4.avif') — URL-encoding dependent on browser.
+• The MP4 hero video is the dominant performance liability.
+• ACTION: Ensure all image paths use URL-encoded spaces (%20) or rename files to remove spaces.
+
+HOABL GOA — SEO AUDIT REPORThoablgoa.com
+Confidential — 23 Apr 2026 — claude-seo v1.9.0Page 7
+4. On-Page SEO Analysis (All Pages)
+PageElementCurrent StateStatusRecommended Fix
+HomepageTitle TagOwn a Piece of Paradise in Goann WeakHOABL Goa – Luxury Plots & Villas | Gulf of Goa & One Goa | From n1.04 Cr
+HomepageMeta DescriptionNot detectedn CriticalBuy HOABL Goa plots & villas — Gulf of Goa (Vasco, from n2.88 Cr) and One Goa (Bicholim, from n1.04 Cr). Authorized Channel Partner. Call +91 8904047669.
+HomepageH1Own a Piece of Paradise in Goann Poetic, no keywordHOABL Goa – Premium Plots & Villas in Goa
+HomepageH2sIconic Goa Destinations, HOABL Lifestyle Gallery, Why HOABL, Ready to Secure Your Land?n Good structureAdd location keywords to H2s where natural.
+Gulf of GoaTitle TagGulf of Goa | Sea-Facing Plots & Villas from Rs.2.88 Cr | HOABL Vascon GoodAlready keyword-rich. Confirm rendering in SERPs (62 chars — may be truncated).
+Gulf of GoaMeta DescriptionNot detectedn CriticalOwn sea-facing plots (2,411 sq.ft) and Sovereign Bay Villas (1,416 sq.ft) at HOABL Gulf of Goa, Vasco. Prices from n2.88 Cr*. Book a site visit today.
+One GoaTitle TagOne Goa | Island Township Plots & Apartments from Rs.1.04 Cr | HOABL Bicholimn GoodKeyword-rich. Check 75 char truncation risk.
+One GoaMeta DescriptionNot detectedn Critical100+ acre island township in Bicholim, North Goa. Plots from n1.04 Cr, Apartments from n1.26 Cr. 5-star hospitality by Miros Hotels. Enquire now.
+All PagesOpen Graph TagsNot detected on any pagen CriticalAdd og:title, og:description, og:image, og:url, og:type to all 3 pages.
+All PagesTwitter/X CardNot detectedn HighAdd twitter:card, twitter:title, twitter:image to all pages.
+All PagesCanonical TagsNot detectedn HighAdd self-referencing canonical to each page.
+All PagesRERA NumberNot displayed anywheren CriticalDisplay RERA number(s) prominently — legally required in India for real estate ads.
+All PagesChannel Partner DisclosurePresent in footern GoodNo change needed. Clear disclaimer present.
+Keyword Strategy Observation: The two project sub-pages have good, keyword-intent title tags. The homepage
+title however is brand-copy rather than search-optimised. The most valuable keyword opportunities are: HOABL
+Goa plots, luxury plots Vasco Goa, island township Bicholim Goa, HOABL Gulf of Goa price, One Goa Bicholim
+investment. These have buyer intent and the sub-pages are already positioned to rank — they just need to be
+indexed.
+
+HOABL GOA — SEO AUDIT REPORThoablgoa.com
+Confidential — 23 Apr 2026 — claude-seo v1.9.0Page 8
+5. Content Quality & E-E-A-T Assessment
+Experience
+LOW-MEDIUM
+No buyer testimonials, owner reviews, or case studies on any page. '500+
+Happy Owners' counter on homepage is unsupported by any actual reviews
+or quotes. Adding 3–5 verified buyer quotes with names and investment
+context would dramatically improve this signal.
+Expertise
+MEDIUM
+Project descriptions are well-written and factually detailed (possession
+dates, areas, prices, hotel partner names). HOABL brand credentials are
+referenced. However no individual consultant profiles or credentials are
+shown. Adding a brief consultant bio would strengthen expertise signals.
+Authoritative
+ness
+LOW
+hoablgoa.com has zero backlinks detected from authority sources. The
+official HOABL brand site (hoabl.com) is a different domain and its authority
+does not pass to this channel partner site. Multiple competitor microsites
+(hoabl-goa.com, thehoablonegoa.in, one-goa.com, etc.) are better linked.
+This is the most critical gap — authority is the hardest thing to fix quickly.
+Trustworthin
+ess
+LOW-MEDIUM
+HTTPS active — good baseline. 'Authorized Channel Partner' label present
+in header and footer. However: No RERA number displayed (legally
+required). No physical office address. Privacy policy exists (/privacy.html) —
+positive signal. Footer disclaimer is comprehensive and legally sound.
+Content Volume & Uniqueness
+Homepage: ~400 words of visible body copy — thin but acceptable for an aggregator landing page. Gulf of Goa
+page: ~300 words. One Goa page: ~350 words. The content is largely unique to this site (not copied from official
+HOABL.com). However the copy structure mirrors dozens of competing channel partner sites — Google's Helpful
+Content system may struggle to differentiate this from the noise. To stand out, add at minimum: a 'Why invest in
+Goa' section with original market data, a neighbourhood guide for Vasco/Bicholim, and real buyer success stories.
+
+HOABL GOA — SEO AUDIT REPORThoablgoa.com
+Confidential — 23 Apr 2026 — claude-seo v1.9.0Page 9
+6. Schema & Structured Data
+Current Status: ZERO schema detected on any page. No JSON-LD, Microdata, or RDFa markup present.
+Schema TypePagePriorityExpected SERP Benefit
+RealEstateListing / ApartmentGulf of Goa + One Goan CRITICALPrice, area, location shown in rich snippets; eligible for Google RE rich results.
+LocalBusiness → RealEstateAgentHomepagen CRITICALEstablishes business entity in Google Knowledge Graph. NAP consistency for local SEO.
+BreadcrumbListGulf of Goa + One Goan HIGHBreadcrumb trail shown in SERP below title — improves CTR.
+FAQPageAll pagesn MEDIUM (AI only)Google: commercial FAQ not shown. AI systems (ChatGPT, Perplexity) cite FAQPage content.
+ImageObjectGallery sectionsn MEDIUMEnables Google Image SERP visibility for property renders.
+VideoObjectWalkthrough sectionsn MEDIUMIf walkthrough video is embedded, VideoObject enables Video carousel in SERPs.
+OrganizationHomepagen HIGHEstablishes Digital8x / HOABL channel partner as a recognized organization.
+Priority JSON-LD to implement on /gulf-of-goa/ (example):
+{"@context":"https://schema.org","@type":"Apartment","name":"HOABL Gulf of Goa – Sovereign Bay
+Villas","description":"Sea-facing plots and villas in Vasco, South Goa. Plots from Rs.2.88 Cr, Villas
+from Rs.4.50 Cr.","address":{"@type":"PostalAddress","addressLocality":"Vasco da Gama","addressRegion":
+"Goa","addressCountry":"IN"},"numberOfRooms":"Villa","floorSize":{"@type":"QuantitativeValue","value":1
+416,"unitCode":"FTK"},"telephone":"+918904047669","url":"https://hoablgoa.com/gulf-of-goa/"}
+
+HOABL GOA — SEO AUDIT REPORThoablgoa.com
+Confidential — 23 Apr 2026 — claude-seo v1.9.0Page 10
+7. Performance & Core Web Vitals
+Field data (CrUX) is unavailable — site has insufficient traffic for Chrome UX Report population. Lab estimates are
+based on page structure and asset analysis.
+MetricGood ThresholdEstimated StatusPrimary Cause
+LCP (Largest Contentful Paint)≤ 2.5sn POOR (est. 6–10s mobile)hero-bg.mp4 video + above-fold AVIF images delay LCP significantly on mobile.
+INP (Interaction to Next Paint)≤ 200msn NEEDS IMPROVEMENTMultiple popup form JS handlers likely block main thread. WhatsApp widget adds overhead.
+CLS (Cumulative Layout Shift)≤ 0.1n LIKELY OKCustom HTML layout. AVIF/WebP images with defined dimensions should minimize CLS.
+TTFB (Time to First Byte)≤ 800msn UNKNOWNCustom HTML on likely shared hosting — TTFB depends on server configuration.
+FCP (First Contentful Paint)≤ 1.8sn NEEDS IMPROVEMENTLogo + nav render quickly but video background delays meaningful paint.
+Performance Fixes
+• Highest priority: Replace the video hero background with a static AVIF/WebP image on mobile (CSS media
+query). Keep video for desktop only.
+• Add poster attribute to the video element so a static frame renders immediately while video loads.
+• Add fetchpriority='high' to the first visible AVIF/WebP image on each project page.
+• Defer all JavaScript files that are not critical for above-the-fold render.
+• Minify CSS and JS files. Serve via CDN (Cloudflare free tier) for global performance improvement.
+• AVIF and WebP formats already in use — excellent. Ensure images have explicit width and height attributes to
+prevent CLS.
+• Preconnect to external domains used for fonts or third-party assets.
+
+HOABL GOA — SEO AUDIT REPORThoablgoa.com
+Confidential — 23 Apr 2026 — claude-seo v1.9.0Page 11
+8. Image Optimisation
+IssueSeverityInstancesFix
+File paths with spacesHIGHMultiple (e.g. 'GULF OF GOA/image-4.avif')Rename all image files to use hyphens: gulf-of-goa-image-4.avif. Spaces in URLs cause encoding issues.
+Missing or weak alt textHIGHGallery images: alt='Gulf of Goa Main View' (acceptable), but some avif files use alt='' or generic textAdd descriptive, keyword-rich alt: 'HOABL Gulf of Goa sea-facing plot Vasco South Goa'.
+Hero video instead of image (mobile)HIGH1 (homepage hero)Use static AVIF/WebP hero image for mobile screens via CSS media query.
+Image formatn GOODAVIF and WebP used throughoutNo change needed. Continue using next-gen formats.
+Image dimensions not setMEDIUMUnknown — cannot confirm HTML attributesAdd explicit width and height attributes to all img tags to prevent CLS.
+No image sitemapMEDIUMAll property rendersAdd image information to XML sitemap for Google Image Search visibility.
+Master Plan locked behind lead formLow SEO ImpactGulf of Goa + One Goa pagesSEO-neutral (Google can't see gated content). Consider showing a low-res preview for crawlers.
+
+HOABL GOA — SEO AUDIT REPORThoablgoa.com
+Confidential — 23 Apr 2026 — claude-seo v1.9.0Page 12
+9. Competitive Landscape Analysis
+This is a uniquely challenging competitive environment. Because HOABL markets aggressively through multiple
+channel partners, 10+ microsites target identical keywords. All of these are effectively competing against
+hoablgoa.com for the same searches.
+Competitor DomainEst. IndexationStrengths vs hoablgoa.com
+hoabl-goa.comIndexed (appears in search)Older domain, indexed, likely has some GSC history
+thehoablonegoa.inIndexed (GSC active)Has RERA numbers displayed. More authoritative trust signals.
+one-goa.comIndexedDedicated One Goa domain — exact-match keyword advantage.
+hoabl.land/gulfofgoaIndexedSubpath of established hoabl.land domain — inherits authority.
+hoabl.land/onegoaIndexedSame — benefits from hoabl.land domain authority.
+hoablplots.inIndexedReal estate aggregator — established backlink profile.
+imperialgoa.comIndexedOlder project page — has organic keyword rankings.
+hoabl.com (official)IndexedTHE authority site — DA 30+. Gulf of Goa page ranks #1.
+hoablgoa.com (this site)n NOT INDEXEDBetter structured than most — but no indexation, no schema, no backlinks yet.
+Competitive Differentiation Strategy
+• hoablgoa.com's key advantage is its multi-page structure — most competitors are single-page microsites. Lean
+into this.
+• Focus keyword strategy on long-tail, high-intent terms: 'HOABL Gulf of Goa price 2025', 'One Goa Bicholim plots
+investment', 'sea-facing plots Vasco South Goa'.
+• Display RERA numbers to instantly differentiate from unverified competitors.
+• Add genuine buyer testimonials — most competitor sites use stock photos or no testimonials.
+• Target the 'channel partner' long-tail: 'authorized HOABL channel partner Goa' — low competition, high trust
+signal.
+
+HOABL GOA — SEO AUDIT REPORThoablgoa.com
+Confidential — 23 Apr 2026 — claude-seo v1.9.0Page 13
+10. AI Search Readiness (GEO)
+GEO SignalStatusRecommendation
+llms.txt fileMissingCreate /llms.txt with structured project summary for AI crawlers (GPT, Claude, Perplexity).
+AI crawler access (robots.txt)UnknownConfirm GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot are not blocked.
+Citability — factual densityMEDIUMPrices, areas, dates, and hotel partner names ARE present — good citability signals. Missing: RERA, total units, architect name.
+Structured FAQPage contentMissingAdd FAQ section: 'What is the price of HOABL Gulf of Goa?', 'Is HOABL One Goa RERA registered?', 'Where is Bicholim Goa?'
+Brand mentions on external sitesLOWOnly found on hoabl.com and competitor aggregators. No news or media mentions of hoablgoa.com specifically.
+Video content for AI OverviewPotentialIf walkthrough videos exist, hosting on YouTube and embedding on site improves AI Overview video carousels.
+
+HOABL GOA — SEO AUDIT REPORThoablgoa.com
+Confidential — 23 Apr 2026 — claude-seo v1.9.0Page 14
+11. Local SEO Signals
+Local FactorStatusPriority
+Google Business Profile (GBP)Not confirmed — likely absentn CRITICAL
+NAP – NameHOABL Goa / Digital8xnn Unclear entity name
+NAP – AddressGoa, India only — no street addressn CRITICAL for local pack
+NAP – Phone+91 8904047669 (present on all pages)n Consistent
+Location keywords – homepage'Goa', 'South Goa', 'North Goa' used welln Good
+Location keywords – project pagesVasco/Bicholim used appropriatelyn Good
+Google Maps embedNo live map embed on any pagen HIGH
+Local citationsNot detected (JustDial, Sulekha, MagicBricks, 99acres)n HIGH
+LocalBusiness schemaMissingn CRITICAL
+WhatsApp Business linkPresent on all pagesn Good
+Customer reviews on page500+ Happy Owners claimed but no reviews shownn HIGH
+Key insight: Because this is a channel partner site (not the developer), creating a Google Business Profile as
+'HOABL Goa – Authorized Channel Partner' is feasible and valuable. Use the Digital8x office address in Goa or a
+registered business address. This can drive map pack visibility for 'HOABL Goa plots' and 'luxury plots Goa near
+me' searches.
+
+HOABL GOA — SEO AUDIT REPORThoablgoa.com
+Confidential — 23 Apr 2026 — claude-seo v1.9.0Page 15
+12. Search Experience Optimisation (SXO)
+Search Intent Match
+Target users are HNI investors and lifestyle buyers searching for: luxury plots Goa, HOABL Goa price, sea-facing
+plots Vasco. Intent is commercial investigation (comparing options, checking prices, assessing ROI). The site
+correctly provides: project specs, pricing tiers, amenity lists, possession dates, and direct enquiry forms. Intent
+match: GOOD.
+UX & Conversion Friction Analysis
+[HIGH FRICTION] All document downloads (brochure, floor plan, master plan, walkthrough) are gated behind lead
+forms. While strategically correct for lead gen, the same details fields on every popup creates fatigue. Each form
+requires name, phone, and project selection independently — no session persistence.
+Recommendation: Implement a single sticky sidebar form that persists across scroll. Or use a 'one-tap verify' pattern
+after initial submission.
+[MEDIUM FRICTION] The hero section counter '500+ Happy Owners' lacks supporting evidence on the page — no
+testimonials, no reviews, no case studies. For n1–4.5 Cr purchases, buyers need social proof.
+Recommendation: Add a testimonials carousel with real buyer names, investment amounts, and outcome.
+[MEDIUM FRICTION] Walk-through sections on project pages have a preview image but no actual embedded
+video — clicking 'Play Virtual Tour' likely triggers a lead capture form rather than playing a video.
+Recommendation: Embed a real YouTube walkthrough video. Gated video behind a form reduces engagement
+significantly.
+[POSITIVE SIGNAL] The 'GET CALLBACK IN 15 MINS' CTA on homepage is strong and time-bound — creates
+urgency without being pushy. The homepage form with project selection dropdown is clean and
+conversion-focused.
+Recommendation: No change needed. Consider A/B testing '60 MINUTE CALLBACK' vs '15 MIN CALLBACK' — the
+15 min claim must be deliverable.
+[POSITIVE SIGNAL] Navigation includes direct links to both project pages from homepage. Mobile hamburger
+menu present. Clear visual hierarchy.
+Recommendation: No change needed. Internal linking structure is solid.
+
+HOABL GOA — SEO AUDIT REPORThoablgoa.com
+Confidential — 23 Apr 2026 — claude-seo v1.9.0Page 16
+13. Backlinks & Domain Authority
+MetricEstimated ValueTarget Benchmark
+Domain Authority (DA)0–5 / 100 (new domain)20–30 within 6 months with active link building
+Referring Domains0–2 detected50+ for competitive HOABL Goa keyword ranking
+Links from HOABL portalsNone confirmedRequest a link from official hoabl.com channel partner page
+Links from real estate portalsNoneMagicBricks, 99acres, Housing.com — each provides high-DA dofollow link
+Links from news/mediaNonePR campaign for project launch would provide high-authority coverage
+Internal link structureSolid — 3 pages well-linkedMaintain as site grows
+Toxic backlinksNone detected (positive)Monitor via Ahrefs/SEMrush once domain has more history
+Link Building Action Plan
+• Request official listing on hoabl.com's 'Channel Partners' page — single most powerful link available.
+• List both projects on MagicBricks, 99acres, Housing.com, Square Yards, NoBroker, and PropTiger.
+• Submit to Goa-focused property portals: GoaProperties.com, GoaRealEstate.com.
+• Reach out to Goa-based lifestyle/travel blogs for investment-in-Goa content partnerships.
+• Issue a press release via PRNewswire India for HOABL Goa channel partner launch.
+• List business on Google Business Profile, Justdial, Sulekha, and IndiaMart.
+
+HOABL GOA — SEO AUDIT REPORThoablgoa.com
+Confidential — 23 Apr 2026 — claude-seo v1.9.0Page 17
+14. Prioritised Action Plan
+n CRITICAL — Do This Week (Week 1)
+Timeline: Immediate | Effort: 30 mins – 2 hrs per task
+1.
+Check all 3 pages for noindex meta tags and robots.txt blocks. Remove any blocking rules.
+2.
+Set up Google Search Console (GSC). Verify ownership. Submit URL Inspection for all pages.
+3.
+Create sitemap.xml listing all URLs and submit to GSC.
+4.
+Add unique meta description to all 3 pages (homepage, gulf-of-goa, one-goa).
+5.
+Add Open Graph tags (og:title, og:description, og:image, og:url) to all 3 pages — critical for WhatsApp
+sharing.
+6.
+Display RERA registration number on all pages — this is a legal requirement in India.
+7.
+Add JSON-LD RealEstateListing schema to both project pages.
+n HIGH — Fix Week 1–2
+Timeline: Week 1–2 | Effort: Half-day per task
+1.
+Add LocalBusiness JSON-LD schema to homepage.
+2.
+Add BreadcrumbList schema to project sub-pages.
+3.
+Add canonical link tags to all pages.
+4.
+Rename all image files to remove spaces (use hyphens). Update all src references accordingly.
+5.
+Add explicit width and height attributes to all img tags.
+6.
+Add descriptive, keyword-rich alt text to all property images.
+7.
+Create and claim Google Business Profile as 'HOABL Goa – Authorized Channel Partner'.
+8.
+List both projects on MagicBricks, 99acres, and Housing.com (generates DA backlinks).
+9.
+Request official channel partner link from hoabl.com.
+n MEDIUM — Fix Month 1
+Timeline: Month 1 | Effort: 1–3 days per task
+1.
+Replace video hero background with static AVIF image on mobile (CSS media query). Keep video for
+desktop.
+2.
+Add poster attribute to video element for instant visual fallback.
+3.
+Add fetchpriority='high' to the first visible image on each page.
+4.
+Embed real YouTube walkthrough videos on project pages (instead of gated-form placeholders).
+
+HOABL GOA — SEO AUDIT REPORThoablgoa.com
+Confidential — 23 Apr 2026 — claude-seo v1.9.0Page 18
+5.
+Add buyer testimonials section with real owner names, investment amounts, and quotes.
+6.
+Add a live Google Maps iframe on both project pages.
+7.
+Add FAQ section to each page (2–3 questions per page) for AI search visibility.
+8.
+Add Twitter/X Card meta tags to all pages.
+9.
+Create /llms.txt for AI crawler citability.
+10.
+Set up Google Analytics 4 and connect to GSC.
+n LOW — Backlog (Month 1–3)
+Timeline: Month 1–3 | Effort: 1+ week per task
+1.
+Create a 'Why Invest in Goa' content section with original market data and appreciation stats.
+2.
+Add neighbourhood guides for Vasco and Bicholim — improves content uniqueness and long-tail keyword
+targeting.
+3.
+Consider adding a blog section covering HOABL news, Goa real estate trends, and investment insights.
+4.
+Implement HSTS, Content-Security-Policy, and X-Frame-Options security headers.
+5.
+Add image sitemap for all property renders.
+6.
+Launch a PR campaign: press release to Times of India, Economic Times (Real Estate), Moneycontrol.
+7.
+Set up Google Ads conversion tracking aligned with all 8 form types on the site.
+Built by agricidaniel — Join the AI Marketing Hub community Free: https://www.skool.com/ai-marketing-hub | Pro:
+https://www.skool.com/ai-marketing-hub-pro

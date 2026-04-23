@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+Disallow: /backend/
+Disallow: /vendor/
+Disallow: /node_modules/
+
+# Allow AI bots for GEO (Generative Engine Optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap location
+Sitemap: https://hoablgoa.com/sitemap.xml

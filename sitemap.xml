@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://hoablgoa.com/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://hoablgoa.com/images/GULF%20OF%20GOA/image-4.avif</image:loc>
+      <image:title>HOABL Gulf of Goa – Sea-Facing Premium Plots in Vasco Goa</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://hoablgoa.com/images/ONE%20GOA/Scene_02_B362_Evening_View03-scaled.webp</image:loc>
+      <image:title>HOABL One Goa – Island Township in Bicholim North Goa</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://hoablgoa.com/gulf-of-goa/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://hoablgoa.com/images/GULF%20OF%20GOA/image-4.avif</image:loc>
+      <image:title>HOABL Gulf of Goa Sea-Facing Plot Vasco South Goa</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://hoablgoa.com/images/GULF%20OF%20GOA/image-5.avif</image:loc>
+      <image:title>HOABL Gulf of Goa Infinity Pool and Amenities</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://hoablgoa.com/images/GULF%20OF%20GOA/image-7.avif</image:loc>
+      <image:title>HOABL Gulf of Goa Sovereign Bay Villa</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://hoablgoa.com/one-goa/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://hoablgoa.com/images/ONE%20GOA/Scene_02_B362_Evening_View03-scaled.webp</image:loc>
+      <image:title>HOABL One Goa Evening View Island Township Bicholim</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://hoablgoa.com/images/ONE%20GOA/Scene_04_B362_Front_Evening_View_01-scaled.webp</image:loc>
+      <image:title>HOABL One Goa Front View Luxury Residences</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://hoablgoa.com/images/ONE%20GOA/Man-Made-Beach-Sea-Experience.webp</image:loc>
+      <image:title>HOABL One Goa Man-Made Beach and Sea Experience</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://hoablgoa.com/privacy.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>
