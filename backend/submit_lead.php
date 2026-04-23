@@ -4,6 +4,10 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST');
 
 require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/vendor/autoload.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 // Only allow POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -84,33 +88,58 @@ try {
 
     // ===== SEND EMAIL =====
     if ($settings) {
-        $to = $settings['notify_email'] ? $settings['notify_email'] : LEAD_EMAIL_TO;
-        $subject = "New Lead: $name ($project)";
-        $body = "New lead received:\n\nName: $name\nPhone: $phone\nEmail: $email\nProject: $project\nMessage: $message\nDevice: $device\nLocation: $city, $country\nIP: $ip\nTime: " . date('Y-m-d H:i:s');
-        
-        $headers = "From: " . LEAD_EMAIL_NAME . " <" . LEAD_EMAIL_FROM . ">\r\n";
-        if (defined('LEAD_EMAIL_CC') && !empty(LEAD_EMAIL_CC)) {
-            $headers .= "Cc: " . LEAD_EMAIL_CC . "\r\n";
-        }
-        if (!empty($email)) {
-            $headers .= "Reply-To: $name <$email>\r\n";
-        }
-        $headers .= "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-        $headers .= "X-Mailer: PHP/" . phpversion();
-        
-        if ($settings['use_smtp'] == 1) {
-            // Note: True SMTP requires a library like PHPMailer. 
-            // For now, we will use mail() but the settings are saved in DB for future PHPMailer integration if needed.
-            // Most shared hosts allow mail() if configured correctly in cPanel.
-            mail($to, $subject, $body, $headers);
-        } else {
-            mail($to, $subject, $body, $headers);
+        $mail = new PHPMailer(true);
+
+        try {
+            // Server settings
+            if (USE_SMTP || (isset($settings['use_smtp']) && $settings['use_smtp'] == 1)) {
+                $mail->isSMTP();
+                $mail->Host       = SMTP_HOST;
+                $mail->SMTPAuth   = true;
+                $mail->Username   = SMTP_USER;
+                $mail->Password   = SMTP_PASS;
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                $mail->Port       = SMTP_PORT;
+            }
+
+            // Recipients
+            $toEmail = $settings['notify_email'] ? $settings['notify_email'] : LEAD_EMAIL_TO;
+            $mail->setFrom(LEAD_EMAIL_FROM, LEAD_EMAIL_NAME);
+            $mail->addAddress($toEmail);
+            
+            if (defined('LEAD_EMAIL_CC') && !empty(LEAD_EMAIL_CC)) {
+                $mail->addCC(LEAD_EMAIL_CC);
+            }
+
+            if (!empty($email)) {
+                $mail->addReplyTo($email, $name);
+            }
+
+            // Content
+            $mail->isHTML(false);
+            $mail->Subject = "New Lead: $name ($project)";
+            $mail->Body    = "New lead received:\n\nName: $name\nPhone: $phone\nEmail: $email\nProject: $project\nMessage: $message\nDevice: $device\nLocation: $city, $country\nIP: $ip\nTime: " . date('Y-m-d H:i:s');
+
+            $mail->send();
+        } catch (Exception $e) {
+            // Fallback to mail() if PHPMailer fails and SMTP is not strictly required
+            error_log("PHPMailer Error: {$mail->ErrorInfo}");
+            
+            $headers = "From: " . LEAD_EMAIL_NAME . " <" . LEAD_EMAIL_FROM . ">\r\n";
+            if (defined('LEAD_EMAIL_CC') && !empty(LEAD_EMAIL_CC)) {
+                $headers .= "Cc: " . LEAD_EMAIL_CC . "\r\n";
+            }
+            if (!empty($email)) {
+                $headers .= "Reply-To: $name <$email>\r\n";
+            }
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+            mail($toEmail, "New Lead: $name ($project)", $mail->Body, $headers);
         }
     }
 
     echo json_encode(['success' => true, 'message' => 'Lead captured successfully!']);
 } catch (Exception $e) {
     error_log('Lead Error: ' . $e->getMessage());
-    echo json_encode(['success' => false, 'message' => 'Database error.']);
+    echo json_encode(['success' => false, 'message' => 'Processing error.']);
 }
