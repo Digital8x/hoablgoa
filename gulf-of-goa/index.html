@@ -119,19 +119,16 @@
     .pbc-btn { display: block; text-align: center; background: linear-gradient(135deg, #c9a84c, #e8943a); color: #030812; font-weight: 800; font-size: 0.9rem; padding: 0.9rem; border-radius: 50px; border: none; cursor: pointer; transition: all 0.35s; box-shadow: 0 8px 24px rgba(201,168,76,0.4); }
     .pbc-btn:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(201,168,76,0.6); }
 
-    /* GATED ASSETS */
-    .gated-wrap { position: relative; border-radius: 24px; overflow: hidden; aspect-ratio: 16/8; cursor: pointer; }
-    .gated-wrap img { width: 100%; height: 100%; object-fit: cover; filter: blur(22px) brightness(0.4); transition: filter 0.4s; display: block; }
-    .gated-wrap:hover img { filter: blur(12px) brightness(0.35); }
-    .gated-overlay {
-      position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
-      background: rgba(3,8,18,0.3); text-align: center; padding: 2rem;
-    }
-    .gated-lock { font-size: 3rem; margin-bottom: 1rem; }
-    .gated-text { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 0.6rem; }
-    .gated-sub { color: rgba(232,234,240,0.6); font-size: 0.9rem; margin-bottom: 1.8rem; }
-    .gated-btn { background: linear-gradient(135deg, #c9a84c, #e8943a); color: #030812; font-weight: 800; font-size: 0.9rem; padding: 0.85rem 2.2rem; border-radius: 50px; border: none; cursor: pointer; box-shadow: 0 8px 24px rgba(201,168,76,0.45); transition: all 0.35s; }
-    .gated-btn:hover { transform: scale(1.05); }
+    /* Gated Cards Layout Fix */
+    .gated-wrap { position: relative; border-radius: 20px; overflow: hidden; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); margin-bottom: 3rem; display: flex; flex-direction: column; cursor: pointer; transition: 0.3s; }
+    .gated-wrap:hover { transform: translateY(-5px); border-color: #c9a84c; }
+    .gated-img-container { position: relative; height: 300px; overflow: hidden; background: #000; display: block; }
+    .gated-img-container img { width: 100%; height: 100%; object-fit: cover; filter: blur(25px); opacity: 0.5; transition: 0.3s; display: block; }
+    .gated-content-below { padding: 2.5rem; text-align: center; background: rgba(8,16,34,0.6); border-top: 1px solid rgba(255,255,255,0.1); }
+    .gated-lock-icon { font-size: 2.5rem; margin-bottom: 1rem; color: #c9a84c; display: block; }
+    .gated-text { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; color: #fff; }
+    .gated-sub { color: #a8b2c1; font-size: 1rem; margin-bottom: 1.5rem; }
+    .gated-btn { display: inline-block; padding: 0.9rem 2rem; background: linear-gradient(135deg, #c9a84c, #e8943a); color: #030812; font-weight: 800; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; border:none; }
 
     /* Amenities */
     .amenities-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
@@ -194,13 +191,12 @@
     /* Gated Cards Mobile Fix */
     /* Gated Cards Mobile Fix */
     @media (max-width: 600px) {
-      .gated-text { font-size: 1.4rem !important; margin-bottom: 0.5rem !important; }
-      .gated-sub { font-size: 0.8rem !important; padding: 0 1rem; }
-      .gated-overlay { padding: 1.5rem !important; }
-      .gated-lock { font-size: 1.5rem !important; }
-      .gated-btn { padding: 0.7rem 1.2rem !important; font-size: 0.8rem !important; }
+      .gated-img-container { height: 220px; }
+      .gated-content-below { padding: 1.5rem; }
+      .gated-text { font-size: 1.4rem !important; }
+      .gated-sub { font-size: 0.9rem; }
       .proj-section-header h2 { font-size: 2rem !important; }
-      #contact-inline > div { padding: 2rem !important; }
+      #contact-inline > div { padding: 2rem 1.5rem !important; }
     }
 
     /* Lightbox Styles */
@@ -353,10 +349,12 @@
       <p>Submit your details to unlock the full high-resolution master plan — sent directly to your WhatsApp.</p>
     </div>
     <div class="gated-wrap reveal" onclick="openModal('Master Plan')">
-      <img src="../images/GULF OF GOA/image-7.avif" alt="Master Plan Preview" />
-      <div class="gated-overlay">
-        <span class="gated-lock">🔒</span>
-        <p class="gated-text">High-Res Master Plan</p>
+      <div class="gated-img-container">
+        <img src="../images/GULF OF GOA/image-7.avif" alt="Master Plan Preview" />
+      </div>
+      <div class="gated-content-below">
+        <span class="gated-lock-icon">🔒</span>
+        <h3 class="gated-text">High-Res Master Plan</h3>
         <p class="gated-sub">Register to receive the full master plan on WhatsApp</p>
         <button class="gated-btn">View Master Plan →</button>
       </div>
@@ -371,10 +369,12 @@
       <p>Vasco da Gama, South Goa — close to Goa International Airport and the National Highway.</p>
     </div>
     <div class="gated-wrap reveal" onclick="openModal('Location Map')">
-      <img src="../images/GULF OF GOA/image-5.avif" alt="Location Map" />
-      <div class="gated-overlay">
-        <span class="gated-lock">📍</span>
-        <p class="gated-text">Detailed Location Map</p>
+      <div class="gated-img-container">
+        <img src="../images/GULF OF GOA/image-5.avif" alt="Location Map" />
+      </div>
+      <div class="gated-content-below">
+        <span class="gated-lock-icon">📍</span>
+        <h3 class="gated-text">Detailed Location Map</h3>
         <p class="gated-sub">Verify your details to download the high-res location map</p>
         <button class="gated-btn">Download Location Map →</button>
       </div>
