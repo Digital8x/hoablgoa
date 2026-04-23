@@ -104,11 +104,13 @@ try {
 
             // Recipients
             $toEmail = $settings['notify_email'] ? $settings['notify_email'] : LEAD_EMAIL_TO;
+            $ccEmail = isset($settings['notify_email_cc']) && !empty($settings['notify_email_cc']) ? $settings['notify_email_cc'] : (defined('LEAD_EMAIL_CC') ? LEAD_EMAIL_CC : '');
+            
             $mail->setFrom(LEAD_EMAIL_FROM, LEAD_EMAIL_NAME);
             $mail->addAddress($toEmail);
             
-            if (defined('LEAD_EMAIL_CC') && !empty(LEAD_EMAIL_CC)) {
-                $mail->addCC(LEAD_EMAIL_CC);
+            if (!empty($ccEmail)) {
+                $mail->addCC($ccEmail);
             }
 
             if (!empty($email)) {
@@ -126,8 +128,8 @@ try {
             error_log("PHPMailer Error: {$mail->ErrorInfo}");
             
             $headers = "From: " . LEAD_EMAIL_NAME . " <" . LEAD_EMAIL_FROM . ">\r\n";
-            if (defined('LEAD_EMAIL_CC') && !empty(LEAD_EMAIL_CC)) {
-                $headers .= "Cc: " . LEAD_EMAIL_CC . "\r\n";
+            if (!empty($ccEmail)) {
+                $headers .= "Cc: " . $ccEmail . "\r\n";
             }
             if (!empty($email)) {
                 $headers .= "Reply-To: $name <$email>\r\n";

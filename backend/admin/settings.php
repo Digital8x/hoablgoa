@@ -12,10 +12,10 @@ $pdo = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME, DB_USER, DB_PASS, [PDO:
 $msg = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $pdo->prepare("UPDATE settings SET 
-        notify_email = ?, use_smtp = ?, smtp_host = ?, smtp_port = ?, 
+        notify_email = ?, notify_email_cc = ?, use_smtp = ?, smtp_host = ?, smtp_port = ?, 
         smtp_user = ?, smtp_pass = ?, smtp_secure = ? WHERE id = 1");
     $stmt->execute([
-        $_POST['notify_email'], isset($_POST['use_smtp']) ? 1 : 0, 
+        $_POST['notify_email'], $_POST['notify_email_cc'], isset($_POST['use_smtp']) ? 1 : 0, 
         $_POST['smtp_host'], (int)$_POST['smtp_port'],
         $_POST['smtp_user'], $_POST['smtp_pass'], $_POST['smtp_secure']
     ]);
@@ -52,8 +52,12 @@ $settings = $pdo->query("SELECT * FROM settings WHERE id = 1")->fetch(PDO::FETCH
 
         <form method="POST">
             <div class="form-group">
-                <label>Receiver Email (Where you get lead notifications)</label>
+                <label>Receiver Email (Main)</label>
                 <input type="email" name="notify_email" value="<?= htmlspecialchars($settings['notify_email']) ?>" required>
+            </div>
+            <div class="form-group">
+                <label>CC Email (Optional - Second person to receive leads)</label>
+                <input type="email" name="notify_email_cc" value="<?= htmlspecialchars($settings['notify_email_cc'] ?? '') ?>">
             </div>
 
             <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 2rem 0;">
