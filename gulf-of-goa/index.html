@@ -113,10 +113,23 @@
       },
       {
         "@type": "Question",
-        "name": "Where is HOABL Gulf of Goa located?",
+        "text": "HOABL Gulf of Goa is located in Vasco da Gama, South Goa — a premier shoreline development near the Arabian Sea coast in Goa, India."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is HOABL Gulf of Goa RERA approved?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "HOABL Gulf of Goa is located in Vasco da Gama, South Goa — a premier shoreline development near the Arabian Sea coast in Goa, India."
+          "text": "Yes, HOABL Gulf of Goa is a fully RERA-approved project with clear titles and institutional-grade documentation (RERA: PRGO01242125)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I book a site visit for Gulf of Goa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we arrange personalized site visits for potential investors. You can schedule your visit by contacting our senior investment consultant at +91 8904047669."
         }
       }
     ]
@@ -383,6 +396,15 @@
     .lightbox-close { position: absolute; top: 2rem; right: 2rem; color: #fff; font-size: 2.5rem; cursor: pointer; opacity: 0.7; z-index: 10001; }
     .lightbox-close:hover { opacity: 1; }
 
+    /* FAQ Styles */
+    .faq-item { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; margin-bottom: 1rem; padding: 0.5rem; transition: 0.3s; cursor: pointer; }
+    .faq-item:hover { border-color: rgba(201,168,76,0.3); background: rgba(255,255,255,0.05); }
+    .faq-item summary { font-weight: 600; color: #e8eaf0; padding: 1.2rem; list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 1.05rem; outline: none; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; color: #c9a84c; font-size: 1.4rem; transition: 0.3s; }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item p { padding: 0 1.2rem 1.5rem; color: #a8b2c1; line-height: 1.7; font-size: 0.95rem; margin: 0; }
+
     /* Mobile Sidebar Styles */
     .mobile-drawer { position: fixed; top: 0; left: -100%; width: 80%; height: 100%; background: #030812; z-index: 10001; transition: 0.4s; padding: 3rem 2rem; box-shadow: 20px 0 50px rgba(0,0,0,0.8); }
     .mobile-drawer.open { left: 0; }
@@ -634,6 +656,33 @@
         <h3 style="font-family:'Playfair Display',serif; font-size:2.2rem; color:#e8eaf0;">Thank You</h3>
         <p style="color:#a8b2c1; font-size: 1.1rem;">Your request has been received. Our consultant will contact you shortly.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="proj-section" id="faq" style="padding-top: 2rem; max-width: 1000px; margin: 0 auto;">
+    <div class="proj-section-header reveal" style="text-align: center;">
+      <span class="section-tag">Common Enquiries</span>
+      <h2>Gulf of Goa <span class="gradient-text">FAQs</span></h2>
+      <p>Quick answers to the most frequent questions about our sea-facing plots and villas.</p>
+    </div>
+    <div class="faq-container reveal" style="margin-top: 3rem;">
+      <details class="faq-item">
+        <summary>What are the sizes available at Gulf of Goa?</summary>
+        <p>We offer premium sea-facing plots starting from 2,411 sq.ft and Sovereign Bay Estate Villas with a built-up area of 1,416 sq.ft.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What is the possession timeline for this project?</summary>
+        <p>Possession for the Sovereign plots is scheduled for December 2026, and the Sovereign Bay Villas are expected to be ready by March 2028.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is there a site visit facility available?</summary>
+        <p>Yes, we provide personalized site visits for qualified investors. You can book a visit by calling us at +91 8904047669 or filling out the enquiry form.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why invest in Vasco, South Goa?</summary>
+        <p>Vasco is a strategic location in South Goa with excellent connectivity to the airport and port, while maintaining the serene, upscale coastal vibe that luxury investors seek.</p>
+      </details>
     </div>
   </section>
 
