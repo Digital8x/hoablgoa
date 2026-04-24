@@ -89,6 +89,69 @@
   }
   </script>
 
+  <!-- JSON-LD: RealEstateProject (One Goa) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateProject",
+    "name": "HOABL One Goa",
+    "description": "Premium island township in Bicholim, North Goa by The House of Abhinandan Lodha. Features man-made sea and 5-star hospitality.",
+    "url": "https://hoablgoa.com/one-goa/",
+    "brand": {
+      "@type": "Brand",
+      "name": "The House of Abhinandan Lodha"
+    },
+    "location": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bicholim",
+        "addressRegion": "North Goa",
+        "addressCountry": "IN"
+      }
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "INR",
+      "lowPrice": "10400000",
+      "highPrice": "15000000",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: RealEstateProject (Gulf of Goa) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateProject",
+    "name": "HOABL Gulf of Goa",
+    "description": "Luxury sea-facing plots and villas in Vasco, South Goa by The House of Abhinandan Lodha.",
+    "url": "https://hoablgoa.com/gulf-of-goa/",
+    "brand": {
+      "@type": "Brand",
+      "name": "The House of Abhinandan Lodha"
+    },
+    "location": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Vasco da Gama",
+        "addressRegion": "South Goa",
+        "addressCountry": "IN"
+      }
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "INR",
+      "lowPrice": "28800000",
+      "highPrice": "50000000",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+
   <!-- JSON-LD: FAQ -->
   <script type="application/ld+json">
   {
@@ -170,6 +233,30 @@
     .buyer-tag { font-size: 0.8rem; color: #c9a84c; opacity: 0.8; }
     .testimonial-text { color: #a8b2c1; font-style: italic; line-height: 1.7; font-size: 0.95rem; }
     .star-rating { color: #ffca28; margin-bottom: 1rem; font-size: 0.9rem; }
+
+    /* INVESTMENT GUIDE CSS */
+    .guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .guide-card {
+      background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); 
+      border-radius: 20px; overflow: hidden; transition: 0.4s;
+    }
+    .guide-card:hover { transform: translateY(-5px); border-color: rgba(201,168,76,0.3); background: rgba(255,255,255,0.04); }
+    .guide-content { padding: 2rem; }
+    .guide-card h3 { font-size: 1.25rem; color: #fff; margin-bottom: 1rem; font-family: 'Playfair Display', serif; }
+    .guide-card p { font-size: 0.9rem; color: #a8b2c1; line-height: 1.6; margin-bottom: 1.5rem; }
+    .guide-link { color: #c9a84c; text-decoration: none; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; display: flex; align-items: center; gap: 5px; }
+
+    /* INVESTMENT GUIDE CSS */
+    .guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .guide-card {
+      background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); 
+      border-radius: 20px; overflow: hidden; transition: 0.4s;
+    }
+    .guide-card:hover { transform: translateY(-5px); border-color: rgba(201,168,76,0.3); background: rgba(255,255,255,0.04); }
+    .guide-content { padding: 2rem; }
+    .guide-card h3 { font-size: 1.25rem; color: #fff; margin-bottom: 1rem; font-family: 'Playfair Display', serif; }
+    .guide-card p { font-size: 0.9rem; color: #a8b2c1; line-height: 1.6; margin-bottom: 1.5rem; }
+    .guide-link { color: #c9a84c; text-decoration: none; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; display: flex; align-items: center; gap: 5px; }
 
     .bg-video {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1; pointer-events: none; z-index: 0;
@@ -790,6 +877,46 @@
     </div>
   </section>
 
+  </section>
+
+  <!-- INVESTOR'S CORNER -->
+  <section class="proj-section" id="investment-guide" style="padding: 5rem 2rem; background: rgba(201,168,76,0.02);">
+    <div class="container">
+      <div class="proj-section-header reveal" style="text-align: center; margin-bottom: 4rem;">
+        <span class="section-tag">Expert Insights</span>
+        <h2>The Goa <span class="gradient-text">Investment Guide</span></h2>
+        <p style="max-width: 700px; margin: 1rem auto; color: #a8b2c1;">Strategic data and market analysis for the modern real estate investor looking at high-yield opportunities in Goa.</p>
+      </div>
+
+      <div class="guide-grid">
+        <!-- Guide 1 -->
+        <div class="guide-card reveal">
+          <div class="guide-content">
+            <h3>Why Bicholim is the New North Goa Hub</h3>
+            <p>With MOPA airport expansion and premium island townships like One Goa, Bicholim is transforming from a quiet territory to a high-demand residential destination.</p>
+            <a href="#" onclick="openModal('Guide: Bicholim')" class="guide-link">READ FULL GUIDE →</a>
+          </div>
+        </div>
+        <!-- Guide 2 -->
+        <div class="guide-card reveal" style="transition-delay:0.1s;">
+          <div class="guide-content">
+            <h3>Sea-Facing Assets: A Generational Asset Class</h3>
+            <p>The scarcity of sea-facing land in South Goa makes Gulf of Goa a rare investment. Historical data shows coastal plots appreciate 3x faster than inland properties.</p>
+            <a href="#" onclick="openModal('Guide: South Goa')" class="guide-link">READ FULL GUIDE →</a>
+          </div>
+        </div>
+        <!-- Guide 3 -->
+        <div class="guide-card reveal" style="transition-delay:0.2s;">
+          <div class="guide-content">
+            <h3>Institutional vs Unorganized Land Investment</h3>
+            <p>Understanding why HOABL's institutional quality, clear titles, and 5-star hospitality management provide a safer exit strategy for global investors.</p>
+            <a href="#" onclick="openModal('Guide: Institutional')" class="guide-link">READ FULL GUIDE →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- TESTIMONIALS SECTION -->
   <section class="proj-section" style="padding: 5rem 2rem;">
     <div class="container">
@@ -1141,6 +1268,23 @@
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    
+    // ---- ADVANCED LAZY LOADING (INTERSECTION OBSERVER) ----
+    document.addEventListener("DOMContentLoaded", function() {
+      const lazyElements = document.querySelectorAll('img[loading="lazy"], .reveal');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            // If it's an image, we can also trigger high-res swap if needed
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      lazyElements.forEach(el => observer.observe(el));
+    });
   </script>
 </body>
 </html>
