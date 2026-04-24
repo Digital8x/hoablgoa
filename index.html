@@ -148,6 +148,29 @@
       position: fixed; inset: 0; z-index: -10; overflow: hidden;
       background: #030812;
     }
+    
+    /* TESTIMONIAL SLIDER CSS */
+    .testimonial-track {
+      display: flex; gap: 2rem; overflow-x: auto; padding: 2rem 0;
+      scrollbar-width: none; -ms-overflow-style: none;
+    }
+    .testimonial-track::-webkit-scrollbar { display: none; }
+    .testimonial-card {
+      flex: 0 0 350px; background: rgba(255,255,255,0.03); 
+      border: 1px solid rgba(255,255,255,0.08); border-radius: 24px;
+      padding: 2.5rem; transition: all 0.4s ease; backdrop-filter: blur(10px);
+    }
+    .testimonial-card:hover { 
+      background: rgba(255,255,255,0.06); transform: translateY(-10px);
+      border-color: rgba(201,168,76,0.3);
+    }
+    .buyer-info { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .buyer-img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid #c9a84c; }
+    .buyer-name { font-weight: 700; color: #fff; margin: 0; }
+    .buyer-tag { font-size: 0.8rem; color: #c9a84c; opacity: 0.8; }
+    .testimonial-text { color: #a8b2c1; font-style: italic; line-height: 1.7; font-size: 0.95rem; }
+    .star-rating { color: #ffca28; margin-bottom: 1rem; font-size: 0.9rem; }
+
     .bg-video {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1; pointer-events: none; z-index: 0;
     }
@@ -766,6 +789,57 @@
       </div>
     </div>
   </section>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section class="proj-section" style="padding: 5rem 2rem;">
+    <div class="container">
+      <div class="proj-section-header" style="text-align: center; margin-bottom: 3rem;">
+        <span class="section-tag">Happy Owners</span>
+        <h2>Whispers of <span class="gradient-text">Excellence</span></h2>
+        <p style="max-width: 600px; margin: 1rem auto; color: #a8b2c1;">Hear from the distinguished community who have already secured their legacy with HOABL Goa.</p>
+      </div>
+
+      <div class="testimonial-track reveal">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <div class="star-rating">★★★★★</div>
+          <p class="testimonial-text">"Investing in Gulf of Goa was a seamless experience. The clarity of documentation and the stunning sea-facing location made it an easy decision for our family legacy."</p>
+          <div class="buyer-info">
+            <img src="images/buyer-1.png" alt="Buyer" class="buyer-img">
+            <div>
+              <p class="buyer-name">Rajesh Malhotra</p>
+              <p class="buyer-tag">Investor, Dubai</p>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <div class="star-rating">★★★★★</div>
+          <p class="testimonial-text">"One Goa is truly a masterpiece. An island township with 5-star amenities in North Goa is something we've been waiting for. Excellent service by the channel partner team."</p>
+          <div class="buyer-info">
+            <img src="images/buyer-2.png" alt="Buyer" class="buyer-img">
+            <div>
+              <p class="buyer-name">Priyanka Sharma</p>
+              <p class="buyer-tag">Business Owner, Mumbai</p>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+          <div class="star-rating">★★★★★</div>
+          <p class="testimonial-text">"The transparency throughout the booking process was impressive. HOABL has brought institutional-grade plotted development to Goa, and it shows in every detail."</p>
+          <div class="buyer-info">
+            <img src="images/buyer-3.png" alt="Buyer" class="buyer-img">
+            <div>
+              <p class="buyer-name">Vikram Singh</p>
+              <p class="buyer-tag">NRI, London</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- FAQ SECTION -->
   <section class="proj-section" style="padding: 5rem 2rem; max-width: 1000px; margin: 0 auto;">

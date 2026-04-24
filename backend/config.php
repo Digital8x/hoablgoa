@@ -24,3 +24,8 @@ define('SMTP_HOST', 'smtp.gmail.com');
 define('SMTP_PORT', 587);
 define('SMTP_USER', 'your@gmail.com');
 define('SMTP_PASS', 'your-app-password');   // Use App Password, not Gmail password
+
+// ===== BROCHURE LINKS =====
+define('BROCHURE_ONE_GOA', 'https://hoablgoa.com/pdf/one-goa-brochure.pdf');
+define('BROCHURE_GULF_OF_GOA', 'https://hoablgoa.com/pdf/gulf-of-goa-brochure.pdf');
+define('SITE_URL', 'https://hoablgoa.com');

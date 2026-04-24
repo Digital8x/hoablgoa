@@ -147,6 +147,47 @@ try {
         mail($toEmail, "New Lead: $name ($project)", "New lead received:\n\nName: $name\nPhone: $phone\nEmail: $email\nProject: $project\nMessage: $message\nDevice: $device\nLocation: $city, $country\nIP: $ip\nTime: " . date('Y-m-d H:i:s'), $headers);
     }
 
+    // ===== CUSTOMER AUTO-RESPONDER =====
+    if (!empty($email)) {
+        try {
+            $autoMail = new PHPMailer(true);
+            // Use same SMTP settings as above
+            if ($useSmtp) {
+                $autoMail->isSMTP();
+                $autoMail->Host       = (!empty($settings['smtp_host'])) ? $settings['smtp_host'] : SMTP_HOST;
+                $autoMail->SMTPAuth   = true;
+                $autoMail->Username   = (!empty($settings['smtp_user'])) ? $settings['smtp_user'] : SMTP_USER;
+                $autoMail->Password   = (!empty($settings['smtp_pass'])) ? $settings['smtp_pass'] : SMTP_PASS;
+                $autoMail->SMTPSecure = ($secure == 'ssl') ? PHPMailer::ENCRYPTION_SMTPS : PHPMailer::ENCRYPTION_STARTTLS;
+                $autoMail->Port       = (!empty($settings['smtp_port'])) ? (int)$settings['smtp_port'] : SMTP_PORT;
+            }
+
+            $autoMail->setFrom(LEAD_EMAIL_FROM, LEAD_EMAIL_NAME);
+            $autoMail->addAddress($email, $name);
+
+            $autoMail->isHTML(true);
+            $autoMail->Subject = "Thank you for your interest in $project - HOABL Goa";
+            
+            $brochureLink = (strpos(strtolower($project), 'one goa') !== false) ? BROCHURE_ONE_GOA : BROCHURE_GULF_OF_GOA;
+            
+            $autoMail->Body = "
+                <div style='font-family: Arial, sans-serif; color: #333; line-height: 1.6;'>
+                    <h2>Hello $name,</h2>
+                    <p>Thank you for your interest in <strong>$project</strong> by The House of Abhinandan Lodha.</p>
+                    <p>We have received your enquiry, and our senior investment consultant will contact you shortly to provide personalized guidance and exclusive inventory access.</p>
+                    <p>In the meantime, you can download the project e-brochure using the link below:</p>
+                    <p><a href='$brochureLink' style='display: inline-block; padding: 12px 25px; background-color: #c9a84c; color: #000; text-decoration: none; border-radius: 50px; font-weight: bold;'>DOWNLOAD E-BROCHURE</a></p>
+                    <hr style='border: 0; border-top: 1px solid #eee; margin: 20px 0;'>
+                    <p style='font-size: 0.9em; color: #777;'>Warm regards,<br><strong>HOABL Goa Team</strong><br><a href='" . SITE_URL . "'>" . SITE_URL . "</a></p>
+                </div>
+            ";
+
+            $autoMail->send();
+        } catch (Exception $e) {
+            error_log("Auto-Responder Error: " . $e->getMessage());
+        }
+    }
+
     echo json_encode(['success' => true, 'message' => 'Lead captured successfully!']);
 } catch (Exception $e) {
     error_log('Lead Error: ' . $e->getMessage());
