@@ -30,21 +30,20 @@
       overflow-x: hidden;
     }
 
-    /* Navigation */
-    nav {
-      padding: 1.5rem 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(3, 8, 18, 0.8);
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+    /* Site Navigation */
+    .site-nav {
+      position: sticky; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 1.2rem 0;
+      background: rgba(3,8,18,0.92);
+      backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
     }
-    .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 800; color: var(--primary); text-decoration: none; }
-    .back-link { color: var(--text); text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
+    .nav-inner {
+      max-width: 1260px; margin: 0 auto; padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo img { height: 50px; object-fit: contain; }
+    .back-link { color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
     .back-link:hover { color: var(--primary); }
 
     /* Header */
@@ -86,67 +85,38 @@
       border-radius: 24px;
       overflow: hidden;
       transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-      display: flex;
-      flex-direction: column;
+      display: flex; flex-direction: column; cursor: pointer;
     }
     .insight-card:hover {
       transform: translateY(-10px);
       background: rgba(255,255,255,0.05);
       border-color: var(--primary);
     }
-    .insight-img {
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: #111;
-      position: relative;
-    }
-    .insight-img img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
+    .insight-img { width: 100%; aspect-ratio: 16/9; background: #111; position: relative; overflow: hidden; }
+    .insight-img img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: 0.6s; }
+    .insight-card:hover .insight-img img { transform: scale(1.1); opacity: 1; }
     .insight-badge {
-      position: absolute;
-      top: 1.5rem;
-      left: 1.5rem;
-      background: var(--primary);
-      color: #000;
-      padding: 0.4rem 1rem;
-      border-radius: 50px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
+      position: absolute; top: 1.5rem; left: 1.5rem;
+      background: var(--primary); color: #000; padding: 0.4rem 1rem;
+      border-radius: 50px; font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; z-index: 2;
     }
     .insight-content { padding: 2rem; flex-grow: 1; display: flex; flex-direction: column; }
     .insight-date { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.8rem; display: block; }
     .insight-title {
       font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-      line-height: 1.3;
-      color: var(--text);
+      font-size: 1.6rem; margin-bottom: 1rem; line-height: 1.3; color: var(--text);
     }
-    .insight-excerpt {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-      flex-grow: 1;
-    }
+    .insight-excerpt { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; }
     .read-more {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.9rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: 0.3s;
+      color: var(--primary); text-decoration: none; font-weight: 700; font-size: 0.9rem;
+      display: inline-flex; align-items: center; gap: 0.5rem; transition: 0.3s;
     }
     .read-more:hover { gap: 0.8rem; }
 
-    /* Footer */
     footer {
-      padding: 4rem 5%;
-      text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      color: var(--text-muted);
-      font-size: 0.85rem;
+      padding: 4rem 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05);
+      color: var(--text-muted); font-size: 0.85rem;
     }
 
     @media (max-width: 768px) {
@@ -157,57 +127,61 @@
 </head>
 <body>
 
-  <nav>
-    <a href="index.html" class="logo">HOABL GOA</a>
-    <a href="index.html" class="back-link">← Back to Main Site</a>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo-v2.png" alt="HOABL Goa">
+      </a>
+      <a href="index.html" class="back-link">← Back to Main Site</a>
+    </div>
   </nav>
 
   <header>
-    <span class="section-tag">Market Analysis</span>
+    <span class="section-tag">Market Intelligence</span>
     <h1>Real Estate <br /><span style="color: var(--primary)">Insights</span></h1>
     <p class="subtitle">Deep dives into the Goa real estate market, infrastructure growth, and investment opportunities with The House of Abhinandan Lodha.</p>
   </header>
 
   <main class="insights-grid">
     <!-- Article 1 -->
-    <article class="insight-card">
+    <article class="insight-card" onclick="location.href='insights/mopa-airport-impact.html'">
       <div class="insight-img">
         <div class="insight-badge">Market Update</div>
-        <div style="width:100%; height:100%; background: linear-gradient(135deg, #1a2a44, #030812); display: flex; align-items: center; justify-content: center; font-size: 3rem;">✈️</div>
+        <img src="images/ONE GOA/Scene_04_B362_Front_Evening_View_01-scaled.webp" alt="MOPA Airport Impact">
       </div>
       <div class="insight-content">
         <span class="insight-date">October 24, 2024</span>
         <h2 class="insight-title">MOPA Airport Expansion: The Impact on North Goa Property Prices</h2>
-        <p class="insight-excerpt">The commissioning of the New Goa International Airport (MOPA) has triggered a massive real estate rally in Bicholim and surrounding areas. Learn why this infrastructure milestone is a game-changer for investors...</p>
-        <a href="#" class="read-more">CONTINUE READING →</a>
+        <p class="insight-excerpt">The commissioning of the New Goa International Airport (MOPA) has triggered a massive real estate rally in Bicholim. Learn why this infrastructure milestone is a game-changer...</p>
+        <a href="insights/mopa-airport-impact.html" class="read-more">READ FULL ARTICLE →</a>
       </div>
     </article>
 
     <!-- Article 2 -->
-    <article class="insight-card">
+    <article class="insight-card" onclick="location.href='insights/north-vs-south-goa.html'">
       <div class="insight-img">
         <div class="insight-badge">Investment Guide</div>
-        <div style="width:100%; height:100%; background: linear-gradient(135deg, #442a1a, #030812); display: flex; align-items: center; justify-content: center; font-size: 3rem;">⚖️</div>
+        <img src="images/GULF OF GOA/image-4.avif" alt="North vs South Goa">
       </div>
       <div class="insight-content">
         <span class="insight-date">October 22, 2024</span>
         <h2 class="insight-title">South Goa vs North Goa: Which is better for Long-term Plot Investment?</h2>
-        <p class="insight-excerpt">Deciding between the serene coastlines of Vasco and the high-growth townships of Bicholim? We break down the ROI potential, rental yields, and lifestyle factors of both regions to help you decide...</p>
-        <a href="#" class="read-more">CONTINUE READING →</a>
+        <p class="insight-excerpt">Deciding between the serene coastlines of Vasco and the high-growth townships of Bicholim? We break down the ROI potential and lifestyle factors...</p>
+        <a href="insights/north-vs-south-goa.html" class="read-more">READ FULL ARTICLE →</a>
       </div>
     </article>
 
     <!-- Article 3 -->
-    <article class="insight-card">
+    <article class="insight-card" onclick="location.href='insights/branded-land-advantage.html'">
       <div class="insight-img">
         <div class="insight-badge">Security</div>
-        <div style="width:100%; height:100%; background: linear-gradient(135deg, #1a442a, #030812); display: flex; align-items: center; justify-content: center; font-size: 3rem;">🛡️</div>
+        <img src="images/ONE GOA/HoABL-Clubhouse-with-Swimming-Pool-and-Deck-1-quj3wcnzbm0m73dl139y84143rxgeku8axhocs6few.webp" alt="Branded Land Advantage">
       </div>
       <div class="insight-content">
         <span class="insight-date">October 20, 2024</span>
         <h2 class="insight-title">Branded Land vs Local Plots: Why HNI Investors are Choosing HOABL</h2>
-        <p class="insight-excerpt">Investing in unorganized land comes with risks. Discover how HOABL's institutional-grade documentation, 5-star management, and clear titles provide a safe haven for global capital...</p>
-        <a href="#" class="read-more">CONTINUE READING →</a>
+        <p class="insight-excerpt">Investing in unorganized land comes with risks. Discover how HOABL's institutional-grade documentation and 5-star management provide a safe haven...</p>
+        <a href="insights/branded-land-advantage.html" class="read-more">READ FULL ARTICLE →</a>
       </div>
     </article>
   </main>
