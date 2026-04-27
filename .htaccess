@@ -1,7 +1,7 @@
-# Force HTTPS (Commented out temporarily due to SSL issues)
-# RewriteEngine On
-# RewriteCond %{HTTPS} off
-# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Force HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Pass Authorization header to PHP (fixes Basic Auth on some hosting)
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
