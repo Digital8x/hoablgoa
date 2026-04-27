@@ -127,8 +127,20 @@ try {
 
         // Content
         $mail->isHTML(false);
-        $mail->Subject = "New Lead: $name ($project)";
-        $mail->Body    = "New lead received:\n\nName: $name\nPhone: $phone\nEmail: $email\nProject: $project\nMessage: $message\nDevice: $device\nLocation: $city, $country\nIP: $ip\nTime: " . date('Y-m-d H:i:s');
+        $mail->Subject = "[HOABL GOA] New Lead: $name";
+        $mail->Body    = "HOABL Goa Properties - New Lead Received\n"
+                       . "==========================================\n\n"
+                       . "Project Interest: $project\n"
+                       . "Customer Name: $name\n"
+                       . "WhatsApp Number: $phone\n"
+                       . "Email Address: $email\n\n"
+                       . "Extra Details:\n"
+                       . "--------------\n"
+                       . "Message: $message\n"
+                       . "Device: $device\n"
+                       . "Location: $city, $country\n"
+                       . "IP Address: $ip\n"
+                       . "Submission Time: " . date('Y-m-d H:i:s');
 
         $mail->send();
     } catch (Exception $e) {
@@ -144,7 +156,16 @@ try {
         }
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-        mail($toEmail, "New Lead: $name ($project)", "New lead received:\n\nName: $name\nPhone: $phone\nEmail: $email\nProject: $project\nMessage: $message\nDevice: $device\nLocation: $city, $country\nIP: $ip\nTime: " . date('Y-m-d H:i:s'), $headers);
+
+        $fallbackBody = "HOABL Goa Properties - New Lead Received\n"
+                      . "==========================================\n\n"
+                      . "Project Interest: $project\n"
+                      . "Customer Name: $name\n"
+                      . "WhatsApp Number: $phone\n"
+                      . "Email Address: $email\n\n"
+                      . "Submission Time: " . date('Y-m-d H:i:s');
+
+        mail($toEmail, "[HOABL GOA] New Lead: $name", $fallbackBody, $headers);
     }
 
     // ===== CUSTOMER AUTO-RESPONDER =====
