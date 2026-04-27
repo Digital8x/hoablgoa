@@ -15,7 +15,7 @@ define('SITE_NAME', 'HOABL Goa Properties (Managed by Digital8X)');
 
 // ===== ADMIN PANEL CREDENTIALS =====
 define('ADMIN_USER', 'admin');
-define('ADMIN_PASS', 'hoabl@2026');   // Change this password!
+define('ADMIN_PASS', 'demo%111');   // Updated password
 
 // ===== SMTP (Optional - for Gmail/SMTP) =====
 // If PHP mail() doesn't work on your server, use SMTP:
