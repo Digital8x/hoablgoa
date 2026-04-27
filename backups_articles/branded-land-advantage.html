@@ -56,7 +56,7 @@
     .article-hero img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
     .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent, var(--bg)); }
 
-    .content-container { max-width: 1200px; margin: -100px auto 6rem; padding: 0 2rem; position: relative; z-index: 2; }
+    .content-container { max-width: 800px; margin: -100px auto 6rem; padding: 0 2rem; position: relative; z-index: 2; }
     .article-tag { color: var(--primary); text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; font-weight: 700; margin-bottom: 1rem; display: block; }
     h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.2; margin-bottom: 2rem; }
     .meta-info { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1.5rem; }
@@ -72,27 +72,6 @@
     .btn-cta { background: var(--primary); color: #000; padding: 1.1rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; margin-top: 1.5rem; transition: 0.3s; border: none; cursor: pointer; }
 
     @media (max-width: 768px) { h1 { font-size: 2.2rem; } .content-container { margin-top: -50px; } .feature-grid { grid-template-columns: 1fr; } }
-  
-    /* New Layout CSS */
-    .layout-grid { display: grid; grid-template-columns: 1fr 380px; gap: 5rem; align-items: start; margin-top: 3rem; }
-    .sidebar { position: sticky; top: 120px; }
-    .sticky-cta { background: rgba(3,8,18,0.95); border: 1px solid rgba(201,168,76,0.4); padding: 3rem 2.5rem; border-radius: 24px; box-shadow: 0 25px 50px rgba(0,0,0,0.6); text-align: left; position: relative; overflow: hidden; }
-    .sticky-cta::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--primary); }
-    .sticky-cta h3 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 0.8rem; line-height: 1.2; }
-    .sticky-cta p { font-size: 1rem; margin-bottom: 2rem; color: #a8b2c1; line-height: 1.5; }
-    .sticky-cta input { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.15); width: 100%; box-sizing: border-box; transition: 0.3s; }
-    .sticky-cta input:focus { border-color: var(--primary); background: rgba(255,255,255,0.08); }
-    .sticky-cta .btn-cta { width: 100%; margin-top: 0.5rem; font-size: 1.1rem; padding: 1.2rem; }
-    
-    .article-header { border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2rem; margin-bottom: 2rem; text-align: left; }
-    .article-header h1 { margin-bottom: 1rem; }
-    .article-header .meta-info { margin-bottom: 0; border: none; padding: 0; }
-    
-    @media (max-width: 992px) {
-      .layout-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .sidebar { position: static; }
-    }
-
   </style>
 </head>
 <body>
@@ -112,16 +91,11 @@
   </div>
 
   <article class="content-container">
-    
-    <div class="article-header">
-      <span class="article-tag">Asset Security</span>
+    <span class="article-tag">Asset Security</span>
     <h1>Branded Land vs Local Plots: Why HNI Investors are Choosing HOABL</h1>
     <div class="meta-info">Published on April 25, 2026 • 4 Min Read</div>
-    </div>
-    
-    <div class="layout-grid">
-      <div class="main-content">
-        <div class="article-body">
+
+    <div class="article-body">
       <p>In the past, buying land in Goa was considered a "high-risk" move for outstation and international investors. Issues with titles, unorganized maintenance, and lack of clear boundaries were common. <strong>The House of Abhinandan Lodha (HOABL)</strong> has solved this problem by introducing "Branded Land."</p>
 
       <h2>The Pillars of Branded Land Investment</h2>
@@ -174,20 +148,11 @@
 
       </div>
     </div>
-        <div class="author-box" style="display: flex; align-items: center; gap: 1.5rem; margin-top: 5rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 3rem; margin-bottom: 3rem;">
-      <div class="author-img" style="width: 70px; height: 70px; border-radius: 50%; background: #232232; display: flex; align-items: center; justify-content: center; font-size: 2rem; border: 1px solid #c9a84c; color: #8a7ab0; box-shadow: inset 0 0 10px rgba(0,0,0,0.5);">👤</div>
-      <div>
-        <p style="margin: 0; color: #fff; font-weight: 700; font-size: 1.1rem;">HOABL Project Expert</p>
-        <p style="margin: 0; font-size: 0.9rem; color: #a8b2c1;">Investment Analyst & Goa Real Estate Specialist</p>
-      </div>
-    </div>
-      </div>
-      
-      <aside class="sidebar">
-        <div class="cta-box sticky-cta">
+
+    <div class="cta-box">
       <h3>Ready to Invest in Security?</h3>
       <p>Connect with our senior consultants for a private briefing on HOABL's gated developments.</p>
-      <form action="../backend/submit_lead.php" method="POST" style="display: flex; flex-direction: column; gap: 1.2rem;">
+      <form action="../backend/submit_lead.php" method="POST" style="margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; max-width: 400px; margin-left: auto; margin-right: auto;">
         <input type="hidden" name="project" value="Insight: Branded Land Advantage">
         <input type="text" name="name" placeholder="Full Name" required style="padding: 1rem; border-radius: 50px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; outline: none;">
         <input type="tel" name="phone" placeholder="WhatsApp Number" required style="padding: 1rem; border-radius: 50px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; outline: none;">
@@ -195,7 +160,13 @@
       </form>
     
     <div style="margin: 6rem 0; height: 1px; background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);"></div>
-      </aside>
+
+    <div class="author-box" style="display: flex; align-items: center; gap: 1.5rem; margin-top: 5rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 3rem; margin-bottom: 3rem;">
+      <div class="author-img" style="width: 70px; height: 70px; border-radius: 50%; background: #232232; display: flex; align-items: center; justify-content: center; font-size: 2rem; border: 1px solid #c9a84c; color: #8a7ab0; box-shadow: inset 0 0 10px rgba(0,0,0,0.5);">👤</div>
+      <div>
+        <p style="margin: 0; color: #fff; font-weight: 700; font-size: 1.1rem;">HOABL Project Expert</p>
+        <p style="margin: 0; font-size: 0.9rem; color: #a8b2c1;">Investment Analyst & Goa Real Estate Specialist</p>
+      </div>
     </div>
 
     <!-- Explore Our Collections -->
@@ -319,26 +290,6 @@
       });
     </script>
   </article>
-
-
-  <!-- HOABL Nagpur Cross Promotion -->
-  <section class="cross-promo-section" style="padding: 4rem 2rem; background: var(--bg-dark); border-top: 1px solid rgba(255,255,255,0.05);">
-    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-      <h3 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 0.5rem;">Explore Our Other Projects</h3>
-      <p style="color: #a8b2c1; margin-bottom: 2.5rem;">Discover premium land investments beyond Goa.</p>
-      
-      <a href="https://hoabl-nagpur.com/" target="_blank" style="text-decoration: none; display: block; max-width: 800px; margin: 0 auto; border-radius: 24px; overflow: hidden; position: relative; border: 1px solid rgba(201,168,76,0.3); transition: 0.4s;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='#c9a84c'" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='rgba(201,168,76,0.3)'">
-        <div style="height: 350px; overflow: hidden; position: relative;">
-          <img src="../images/nagpur-promo.png" style="width: 100%; height: 100%; object-fit: cover; object-position: right center;">
-          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(3,8,18,0.95) 0%, rgba(3,8,18,0.2) 60%); display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end; padding: 2.5rem; text-align: right;">
-            <span style="background: rgba(201,168,76,0.2); color: #c9a84c; padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; width: fit-content; border: 1px solid rgba(201,168,76,0.5); backdrop-filter: blur(5px);">New Launch</span>
-            <h4 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #fff; margin-bottom: 0.5rem; margin-top: 0;">HOABL Nagpur</h4>
-            <p style="color: #e8eaf0; font-size: 1.1rem; margin-bottom: 0;">Premium Branded Land in Maharashtra's Winter Capital</p>
-          </div>
-        </div>
-      </a>
-    </div>
-  </section>
 
 </body>
 </html>
