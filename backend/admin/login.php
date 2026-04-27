@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form method="POST">
             <div class="form-group">
                 <label>Username</label>
-                <input type="text" name="username" required placeholder="admin">
+                <input type="text" name="username" required>
             </div>
             <div class="form-group">
                 <label>Password</label>
