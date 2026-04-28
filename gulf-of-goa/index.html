@@ -378,10 +378,16 @@
     .btn-dl:hover { background: rgba(201,168,76,0.1); border-color: rgba(201,168,76,0.35); color: #c9a84c; transform: translateY(-3px); }
 
     /* FOOTER */
-    .proj-footer { background: #020610; border-top: 1px solid rgba(255,255,255,0.06); padding: 2.5rem 2rem; text-align: center; }
-    .proj-footer p { color: #3a4560; font-size: 0.82rem; }
-    .proj-footer strong { color: #536080; }
-    .proj-footer a { color: #c9a84c; text-decoration: none; }
+    /* Footer Redesign */
+    .proj-footer { background: #020610; border-top: 1px solid rgba(255,255,255,0.06); padding: 5rem 2rem 3rem; text-align: left; }
+    .footer-grid { max-width: 1260px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem; margin-bottom: 4rem; }
+    .footer-col h4 { color: #fff; font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 1.5rem; }
+    .footer-col ul { list-style: none; padding: 0; }
+    .footer-col li { margin-bottom: 0.8rem; }
+    .footer-col a { color: #536080; text-decoration: none; transition: color 0.3s; font-size: 0.95rem; }
+    .footer-col a:hover { color: #c9a84c; }
+    .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; }
+    .footer-disclaimer { color: #3a4560; font-size: 0.82rem; line-height: 1.6; max-width: 1000px; margin: 0 auto; }
 
     /* MODAL (same as hub) */
     .modal-overlay { position: fixed; inset: 0; z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 1.5rem; background: rgba(0,0,0,0); backdrop-filter: blur(0px); pointer-events: none; transition: background 0.4s, backdrop-filter 0.4s; }
@@ -790,13 +796,38 @@
   </section>
 
 <footer class="proj-footer">
-      <p class="footer-disclaimer" style="margin-bottom: 1rem; color: #e8eaf0; font-size: 0.95rem;">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="../images/logo-v2.png" alt="HOABL" style="height: 45px; margin-bottom: 1.5rem;" />
+        <p style="color: #536080; font-size: 0.9rem; line-height: 1.6;">Creating generational wealth through strategic land investments. Authorized Channel Partner for The House of Abhinandan Lodha.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Projects</h4>
+        <ul>
+          <li><a href="../gulf-of-goa/">HOABL Gulf of Goa – Vasco</a></li>
+          <li><a href="../one-goa/">HOABL One Goa – Bicholim</a></li>
+          <li><a href="https://hoabl-nagpur.com/" target="_blank">HOABL Nagpur Marina</a></li>
+          <li><a href="https://hoabl-growth.com/" target="_blank">HOABL Naigaon</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../">Home</a></li>
+          <li><a href="../insights.html">Insights</a></li>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p class="footer-disclaimer" style="margin-bottom: 1.5rem; color: #e8eaf0;">
         <strong>Project RERA Numbers:</strong> One Goa (Bicholim): PRGO08231988 | Gulf of Goa (Vasco): PRGO01242125
       </p>
-
       <p class="footer-disclaimer">
         Disclaimer : The content is for information purposes only and does not constitute an offer to avail of any service. Prices mentioned are subject to change without notice and properties mentioned are subject to availability. Images for representation purposes only. This is the official website of authorized marketing partner. We may also send updates to the mobile number/email id registered with us. All Rights Reserved.(Disclaimer & Privacy Policy)
       </p>
+    </div>
   </footer>
 
   <!-- Floating -->
